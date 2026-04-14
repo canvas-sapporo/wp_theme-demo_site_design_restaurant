@@ -19,14 +19,28 @@ $footer_address = get_theme_mod( 'theme_footer_address', '東京都港区南青�
 $footer_phone   = get_theme_mod( 'theme_footer_phone', '03-1234-5678' );
 $footer_email   = get_theme_mod( 'theme_footer_email', 'info@lumiere.jp' );
 
-$footer_year  = (int) gmdate( 'Y' );
-$footer_brand = get_bloginfo( 'name', 'display' );
+$footer_year          = (int) gmdate( 'Y' );
+$footer_brand         = get_bloginfo( 'name', 'display' );
+$footer_site_icon_url = theme_get_brand_icon_url();
 ?>
     <footer class="theme-shell-footer py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div>
-                    <div class="text-3xl tracking-wider mb-4"><?php echo esc_html( $footer_brand ); ?></div>
+                    <a
+                        href="<?php echo esc_url( home_url( '/' ) ); ?>"
+                        class="flex items-center gap-2 md:gap-3 mb-4 min-w-0 theme-link-on-inverse transition-colors"
+                    >
+                        <img
+                            src="<?php echo esc_url( $footer_site_icon_url ); ?>"
+                            alt=""
+                            class="h-8 w-8 md:h-9 md:w-9 shrink-0 object-contain"
+                            width="36"
+                            height="36"
+                            decoding="async"
+                        />
+                        <span class="text-3xl tracking-wider min-w-0 truncate"><?php echo esc_html( $footer_brand ); ?></span>
+                    </a>
                     <p class="theme-text-on-footer-muted"><?php echo esc_html( $footer_tagline ); ?></p>
                 </div>
 

@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite build --watch",
+    "watch": "vite build --watch",
     "build": "vite build"
   },
   "devDependencies": {

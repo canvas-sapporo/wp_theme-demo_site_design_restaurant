@@ -3,7 +3,9 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="<?php echo esc_url( get_theme_file_uri( '/images/logo.svg' ) ); ?>" type="image/svg+xml">
+    <?php if ( ! has_site_icon() ) : ?>
+        <link rel="icon" href="<?php echo esc_url( get_theme_file_uri( '/images/logo.svg' ) ); ?>" type="image/svg+xml">
+    <?php endif; ?>
     <?php wp_head(); ?>
 </head>
 <body <?php body_class( 'antialiased theme-body-bg' ); ?>>
@@ -17,13 +19,30 @@
     <div class="h-12 w-12 rounded-full border-4 border-gray-200 border-t-black animate-spin" aria-hidden="true"></div>
     <p class="mt-4 text-sm tracking-wide theme-text-sub">Loading...</p>
 </div>
-<?php $nav_items = theme_get_header_nav_items(); ?>
+<?php
+$nav_items            = theme_get_header_nav_items();
+$header_site_icon_url = theme_get_brand_icon_url();
+?>
 <div class="min-h-screen flex flex-col">
     <header class="theme-surface-header fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="text-2xl font-serif tracking-wider theme-text-strong">
-                    <?php echo esc_html( get_bloginfo( 'name', 'display' ) ); ?>
+                <a
+                    href="<?php echo esc_url( home_url( '/' ) ); ?>"
+                    class="flex items-center gap-2 md:gap-3 min-w-0 shrink"
+                    aria-label="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
+                >
+                    <img
+                        src="<?php echo esc_url( $header_site_icon_url ); ?>"
+                        alt=""
+                        class="h-8 w-8 md:h-9 md:w-9 shrink-0 object-contain"
+                        width="36"
+                        height="36"
+                        decoding="async"
+                    />
+                    <span class="text-2xl font-serif tracking-wider theme-text-strong truncate hidden md:block">
+                        <?php echo esc_html( get_bloginfo( 'name', 'display' ) ); ?>
+                    </span>
                 </a>
 
                 <nav class="hidden md:flex items-center gap-8" aria-label="<?php esc_attr_e( 'メインナビゲーション', 'demo-site-design-restaurant' ); ?>">

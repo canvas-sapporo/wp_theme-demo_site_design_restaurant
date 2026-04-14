@@ -45,20 +45,30 @@
 
 ## 開発時の使い方
 
-テーマ直下で実行します。
+テーマ直下で依存関係を入れたうえで、**ウォッチモード**を使うと `src/` を保存するたびに `dist/` へ自動ビルドされ、毎回 `build` を打つ必要はありません。
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
-本番向けビルド:
+（npm なら `npm install` / `npm run dev`、同じです。`pnpm watch` も `pnpm dev` と同じ内容です。）
+
+- ターミナルは開いたままにしておき、作業が終わったら `Ctrl+C` で止めます。
+- **`src/` 内の CSS・TypeScript を変えたとき**にウォッチが効きます。
+- **`header.php` や `functions.php` など PHP だけの変更**はビルド不要です。ブラウザを更新すれば反映されます。
+
+本番向けに一度だけまとめてビルドするとき:
 
 ```bash
-npm run build
+pnpm run build
 ```
 
 ビルド済みファイルは `dist` 配下に出力されます（設定は `vite.config.ts` を参照）。
+
+### Cursor / VS Code からウォッチを起動する
+
+`タスクの実行`（`Tasks: Run Task`）から **「Vite: ウォッチ（src 変更で自動ビルド）」** を選ぶと、専用ターミナルで `pnpm dev` が起動します（`.vscode/tasks.json`）。
 
 ## 主なファイル構成
 
@@ -73,7 +83,7 @@ npm run build
 ## カスタマイズの基本方針
 
 - テンプレート編集時は、共通化できるパーツを `template-parts/` に切り出す
-- スタイルやスクリプトは `src/` 側で管理し、`npm run build` で反映する
+- スタイルやスクリプトは `src/` 側で管理し、開発中は `pnpm dev`（ウォッチ）、リリース前などに `pnpm run build`
 - WordPress のテンプレート階層に沿ってファイルを追加・調整する
 
 ## トラブルシューティング

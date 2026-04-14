@@ -510,6 +510,18 @@ function theme_get_gallery_images() {
 }
 
 /**
+ * ブランド表示用アイコン URL（カスタマイザーのサイトアイコン、未設定時はテーマの logo.svg）。
+ *
+ * @param int $size サイトアイコン要求サイズ（px）。
+ * @return string
+ */
+function theme_get_brand_icon_url( $size = 192 ) {
+    return has_site_icon()
+        ? get_site_icon_url( $size )
+        : get_theme_file_uri( '/images/logo.svg' );
+}
+
+/**
  * ヘッダーナビ（React Header.tsx と同じ3項目）の URL・ラベル・アクティブ状態。
  *
  * @return array<int, array{url: string, label: string, active: bool}>
