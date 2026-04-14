@@ -8,6 +8,15 @@
 </head>
 <body <?php body_class( 'antialiased bg-white' ); ?>>
 <?php wp_body_open(); ?>
+<div
+    class="js-page-loader fixed inset-0 z-[100] flex flex-col items-center justify-center bg-white/95 backdrop-blur-sm transition-opacity duration-300"
+    role="status"
+    aria-live="polite"
+>
+    <span class="sr-only"><?php esc_html_e( '読み込み中', 'demo-site-design-restaurant' ); ?></span>
+    <div class="h-12 w-12 rounded-full border-4 border-gray-200 border-t-black animate-spin" aria-hidden="true"></div>
+    <p class="mt-4 text-sm tracking-wide text-gray-600">Loading...</p>
+</div>
 <?php $nav_items = theme_get_header_nav_items(); ?>
 <div class="min-h-screen flex flex-col">
     <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
