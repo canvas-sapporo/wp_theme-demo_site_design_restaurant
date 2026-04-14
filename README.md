@@ -17,6 +17,20 @@
    - `wp-content/themes/wp_theme-demo_site_design_restaurant`
 2. WordPress 管理画面にログイン
 3. `外観 > テーマ` から `wp_theme-demo_site_design_restaurant` を有効化
+4. `固定ページ` を以下の内容で2つ作成する。
+   - トップ用
+     - タイトル：Home
+     - 本文：空でOK。（テーマの front-page.php が表示するため）
+     - 公開する
+   - ブログ一覧用
+     - タイトル：Blog
+     - スラグ：blog（パーマリンク設定で「投稿名」などにしている前提。編集画面の右側でスラッグを変更）
+     - 本文：空でOK。
+     - 公開する
+5. `設定 > 表示設定` で以下を設定する。
+   - ホームページの表示：「固定ページ」
+   - ホームページ：Home
+   - 投稿ページ：Blog
 
 ## 開発時の使い方
 
