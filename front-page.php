@@ -43,6 +43,7 @@ $gallery_subtitle = get_theme_mod( 'theme_gallery_subtitle', '洗練された空
 
         <div class="absolute inset-x-0 top-20 bottom-0 z-[2] flex justify-center items-center">
             <div class="js-hero-reveal relative mx-auto w-full overflow-hidden" style="height: 0%;">
+                <?php theme_liquid_glass_open( array( 'class' => 'liquidGlass-wrapper--fill' ) ); ?>
                 <img
                     class="absolute inset-0 h-full w-full object-cover"
                     src="<?php echo esc_url( $hero_img['url'] ); ?>"
@@ -53,6 +54,7 @@ $gallery_subtitle = get_theme_mod( 'theme_gallery_subtitle', '洗練された空
                     fetchpriority="high"
                 />
                 <div class="absolute inset-0 z-10 theme-bg-footer/40 pointer-events-none" aria-hidden="true"></div>
+                <?php theme_liquid_glass_close(); ?>
             </div>
         </div>
 
@@ -85,7 +87,8 @@ $gallery_subtitle = get_theme_mod( 'theme_gallery_subtitle', '洗練された空
                         <p class="text-lg mb-4 theme-text-body leading-relaxed"><?php echo esc_html( $about_text ); ?></p>
                     <?php endforeach; ?>
                 </div>
-                <div class="relative h-96 md:h-full min-h-[400px]">
+                <div class="liquid-glass-host relative h-96 md:h-full min-h-[400px]">
+                    <?php theme_liquid_glass_open( array( 'class' => 'liquidGlass-wrapper--fill liquidGlass-wrapper--card' ) ); ?>
                     <img
                         class="w-full h-full object-cover"
                         src="<?php echo esc_url( $about_img['url'] ); ?>"
@@ -95,6 +98,7 @@ $gallery_subtitle = get_theme_mod( 'theme_gallery_subtitle', '洗練された空
                         loading="lazy"
                         decoding="async"
                     />
+                    <?php theme_liquid_glass_close(); ?>
                 </div>
             </div>
         </div>
@@ -110,7 +114,8 @@ $gallery_subtitle = get_theme_mod( 'theme_gallery_subtitle', '洗練された空
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 <?php foreach ( $gallery_images as $gallery_image ) : ?>
-                    <div class="relative overflow-hidden group aspect-square">
+                    <div class="liquid-glass-host relative group aspect-square liquidGlass-wrapper--radius-gallery">
+                        <?php theme_liquid_glass_open( array( 'class' => 'liquidGlass-wrapper--fill liquidGlass-wrapper--card liquidGlass-wrapper--radius-gallery' ) ); ?>
                         <img
                             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                             src="<?php echo esc_url( $gallery_image['url'] ); ?>"
@@ -120,7 +125,8 @@ $gallery_subtitle = get_theme_mod( 'theme_gallery_subtitle', '洗練された空
                             loading="lazy"
                             decoding="async"
                         />
-                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" aria-hidden="true"></div>
+                        <?php theme_liquid_glass_close(); ?>
+                        <div class="absolute inset-0 z-10 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" aria-hidden="true"></div>
                     </div>
                 <?php endforeach; ?>
             </div>

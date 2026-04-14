@@ -26,7 +26,7 @@ $date_display   = get_the_date( 'Y年n月j日' );
 	class="group block theme-bg-page overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
 >
 	<article>
-		<div class="relative h-64 bg-gray-200">
+		<div class="liquid-glass-host relative h-64 bg-gray-200">
 			<?php if ( has_post_thumbnail() ) : ?>
 				<?php
 				the_post_thumbnail(

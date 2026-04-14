@@ -31,14 +31,16 @@ $footer_site_icon_url = theme_get_brand_icon_url();
                         href="<?php echo esc_url( home_url( '/' ) ); ?>"
                         class="flex items-center gap-2 md:gap-3 mb-4 min-w-0 theme-link-on-inverse transition-colors"
                     >
+                        <?php theme_liquid_glass_open( array( 'class' => 'liquidGlass-wrapper--icon' ) ); ?>
                         <img
                             src="<?php echo esc_url( $footer_site_icon_url ); ?>"
                             alt=""
-                            class="h-8 w-8 md:h-9 md:w-9 shrink-0 object-contain"
+                            class="object-contain"
                             width="36"
                             height="36"
                             decoding="async"
                         />
+                        <?php theme_liquid_glass_close(); ?>
                         <span class="text-3xl tracking-wider min-w-0 truncate"><?php echo esc_html( $footer_brand ); ?></span>
                     </a>
                     <p class="theme-text-on-footer-muted"><?php echo esc_html( $footer_tagline ); ?></p>

@@ -32,14 +32,16 @@ $header_site_icon_url = theme_get_brand_icon_url();
                     class="flex items-center gap-2 md:gap-3 min-w-0 shrink"
                     aria-label="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
                 >
+                    <?php theme_liquid_glass_open( array( 'class' => 'liquidGlass-wrapper--icon' ) ); ?>
                     <img
                         src="<?php echo esc_url( $header_site_icon_url ); ?>"
                         alt=""
-                        class="h-8 w-8 md:h-9 md:w-9 shrink-0 object-contain"
+                        class="object-contain"
                         width="36"
                         height="36"
                         decoding="async"
                     />
+                    <?php theme_liquid_glass_close(); ?>
                     <span class="text-2xl font-serif tracking-wider theme-text-strong truncate hidden md:block">
                         <?php echo esc_html( get_bloginfo( 'name', 'display' ) ); ?>
                     </span>

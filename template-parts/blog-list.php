@@ -22,7 +22,8 @@ $hero_img = theme_get_blog_hero_image_attrs();
 ?>
 <div class="pt-20 flex-1 flex flex-col">
 	<section class="relative h-[50vh] flex items-center justify-center bg-gray-900 min-h-[280px]">
-		<div class="absolute inset-0 z-0">
+		<div class="liquid-glass-host absolute inset-0 z-0">
+			<?php theme_liquid_glass_open( array( 'class' => 'liquidGlass-wrapper--fill' ) ); ?>
 			<img
 				src="<?php echo esc_url( $hero_img['url'] ); ?>"
 				alt="<?php echo esc_attr( $hero_title ); ?>"
@@ -31,6 +32,7 @@ $hero_img = theme_get_blog_hero_image_attrs();
 				height="720"
 				decoding="async"
 			/>
+			<?php theme_liquid_glass_close(); ?>
 		</div>
 		<div class="relative z-10 text-center theme-text-inverse px-4">
 			<h1 class="text-5xl md:text-6xl mb-4 tracking-wider font-serif"><?php echo esc_html( $hero_title ); ?></h1>

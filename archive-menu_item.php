@@ -31,7 +31,8 @@ $has_any = isset( $counts->publish ) && (int) $counts->publish > 0;
 <main class="flex-1">
 	<!-- Hero（参考: メニューページ全面ヒーロー） -->
 	<section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
-		<div class="absolute inset-0 z-0">
+		<div class="liquid-glass-host absolute inset-0 z-0">
+			<?php theme_liquid_glass_open( array( 'class' => 'liquidGlass-wrapper--fill' ) ); ?>
 			<img
 				class="w-full h-full object-cover"
 				src="<?php echo esc_url( $hero_img['url'] ); ?>"
@@ -42,6 +43,7 @@ $has_any = isset( $counts->publish ) && (int) $counts->publish > 0;
 				fetchpriority="high"
 			/>
 			<div class="absolute inset-0 z-10 bg-black/40 pointer-events-none" aria-hidden="true"></div>
+			<?php theme_liquid_glass_close(); ?>
 		</div>
 		<div class="relative z-20 text-center theme-text-inverse px-4 pt-24 pb-16">
 			<h1 class="text-5xl md:text-7xl mb-6 tracking-wider font-serif font-medium"><?php echo esc_html( $hero_title ); ?></h1>
@@ -156,7 +158,7 @@ $has_any = isset( $counts->publish ) && (int) $counts->publish > 0;
 								$short = theme_get_menu_item_short_description( get_the_ID() );
 								?>
 								<article <?php post_class( 'theme-bg-page overflow-hidden hover:shadow-xl transition-shadow duration-300' ); ?>>
-									<div class="relative h-64 overflow-hidden bg-gray-100">
+									<div class="liquid-glass-host relative h-64 bg-gray-100">
 										<?php if ( has_post_thumbnail() ) : ?>
 											<?php
 											the_post_thumbnail(

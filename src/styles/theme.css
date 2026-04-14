@@ -16,3 +16,167 @@
     opacity: 0;
   }
 }
+
+/* —— Liquid glass（画像共通・参考: liquid-glass-effect-macos） —— */
+@layer components {
+  .liquidGlass-wrapper {
+    /* filter 層が角丸を無視するブラウザ対策：全子要素で同じ半径を参照 */
+    --liquid-glass-radius: 1.75rem;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    isolation: isolate;
+    box-sizing: border-box;
+    /* ドック風：くっきりした外枠（内側のガラスと分離して視認性を確保） */
+    border: 2px solid rgba(255, 255, 255, 0.52);
+    border-radius: var(--liquid-glass-radius);
+    box-shadow:
+      0 4px 4px rgba(0, 0, 0, 0.08),
+      0 12px 32px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    transition:
+      box-shadow 0.35s ease,
+      transform 0.35s ease,
+      border-color 0.35s ease;
+  }
+
+  .liquidGlass-effect {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    overflow: hidden;
+    border-radius: inherit;
+    /* SVG filter は矩形バッファになりがちなので clip-path で角丸を強制 */
+    clip-path: inset(0 round var(--liquid-glass-radius));
+    -webkit-clip-path: inset(0 round var(--liquid-glass-radius));
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(20px) saturate(180%);
+    /* 枠は wrapper の border に任せ、歪みは控えめに */
+    filter: url("#glass-distortion");
+  }
+
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .liquidGlass-effect {
+      background: rgba(255, 255, 255, 0.12);
+      filter: none;
+    }
+  }
+
+  .liquidGlass-tint {
+    z-index: 1;
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    clip-path: inset(0 round var(--liquid-glass-radius));
+    -webkit-clip-path: inset(0 round var(--liquid-glass-radius));
+    background: rgba(255, 255, 255, 0.28);
+    pointer-events: none;
+  }
+
+  .liquidGlass-shine {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    overflow: hidden;
+    border-radius: inherit;
+    clip-path: inset(0 round var(--liquid-glass-radius));
+    -webkit-clip-path: inset(0 round var(--liquid-glass-radius));
+    pointer-events: none;
+    box-shadow:
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.65),
+      inset 2px 2px 2px 0 rgba(255, 255, 255, 0.2),
+      inset -1px -1px 2px 0 rgba(255, 255, 255, 0.18);
+  }
+
+  .liquidGlass-text--media {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+    border-radius: inherit;
+    overflow: hidden;
+  }
+
+  .liquidGlass-text--media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+  }
+
+  .liquidGlass-wrapper--fill {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+  }
+
+  /* ギャラリー等：大きめの角丸（見た目の丸みを画像・ガラス層で一致） */
+  .liquidGlass-wrapper--radius-gallery {
+    --liquid-glass-radius: 2rem;
+  }
+
+  /*
+   * 角丸ガラスを正方形セルに入れたとき、四隅の「すき間」に背面（theme-bg-muted 等）が透ける。
+   * 親にも同じ --liquid-glass-radius でクリップする（変数は .liquidGlass-wrapper--radius-gallery 等で付与可能）。
+   */
+  .liquid-glass-host {
+    overflow: hidden;
+    border-radius: var(--liquid-glass-radius, 1.75rem);
+  }
+
+  .liquidGlass-wrapper--fill .liquidGlass-text--media img.object-contain,
+  .liquidGlass-wrapper--icon .liquidGlass-text--media img {
+    object-fit: contain;
+  }
+
+  .liquidGlass-wrapper--icon {
+    --liquid-glass-radius: 0.875rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    flex-shrink: 0;
+    border-radius: var(--liquid-glass-radius);
+    border-color: rgba(255, 255, 255, 0.5);
+    align-self: center;
+  }
+
+  @media (min-width: 768px) {
+    .liquidGlass-wrapper--icon {
+      --liquid-glass-radius: 1rem;
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+
+  .liquidGlass-wrapper--icon .liquidGlass-text--media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .liquidGlass-wrapper--icon .liquidGlass-text--media img {
+    width: 1.65rem;
+    height: 1.65rem;
+  }
+
+  @media (min-width: 768px) {
+    .liquidGlass-wrapper--icon .liquidGlass-text--media img {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  .group:hover .liquidGlass-wrapper--card,
+  article:hover .liquidGlass-wrapper--card {
+    border-color: rgba(255, 255, 255, 0.62);
+    box-shadow:
+      0 8px 16px rgba(0, 0, 0, 0.12),
+      0 20px 40px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  }
+}
