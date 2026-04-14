@@ -3,6 +3,8 @@
 `wp_theme-demo_site_design_restaurant` は、レストラン向けデモサイトを想定した **WordPress テーマ** です。  
 トップページ、アーカイブ、個別ページなどのテンプレートを含み、フロントエンド資産のビルドには Node.js ベースのツールを利用します。
 
+<img width="1366" height="2684" alt="image" src="https://github.com/user-attachments/assets/e1b22efc-4797-4070-882c-43c2f1cdf6c6" />
+
 ## 前提環境
 
 - WordPress が動作するローカル環境（例: Local）
