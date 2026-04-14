@@ -1,0 +1,7 @@
+/*
+Theme Name: Demo Site Design Restaurant
+Description: WordPress theme with Tailwind CSS build (see package.json).
+Version: 1.0.0
+*/
+
+/* スタイル・JS は dist/（npm run build で生成）を functions.php から読み込みます。 */

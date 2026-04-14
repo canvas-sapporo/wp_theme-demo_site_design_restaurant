@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@source '../../**/*.php';
+@source '../**/*.{ts,js}';
+
+/* React 版 index.css / theme.css と揃え: rem ベースの text-2xl / text-sm が同じ物理サイズになるよう html を固定 */
+@layer base {
+  html {
+    font-size: 16px;
+  }
+}
