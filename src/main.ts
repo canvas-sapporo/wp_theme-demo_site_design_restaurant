@@ -1,4 +1,5 @@
 import "./styles/theme.css";
+import "./front-hero";
 
 (() => {
   const loader = document.querySelector<HTMLElement>(".js-page-loader");

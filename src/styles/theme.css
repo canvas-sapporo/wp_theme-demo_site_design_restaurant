@@ -9,3 +9,10 @@
     font-size: 16px;
   }
 }
+
+/* フロントヒーロー GSAP: アニメーション前にテキストが見えないようにする（動きを減らす設定ではそのまま表示） */
+@media (prefers-reduced-motion: no-preference) {
+  .js-front-hero .js-hero-content > * {
+    opacity: 0;
+  }
+}

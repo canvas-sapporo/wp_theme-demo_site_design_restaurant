@@ -28,25 +28,41 @@ $gallery_subtitle = get_theme_mod( 'theme_gallery_subtitle', '洗練された空
 
 <main class="flex-1">
     <!-- Hero Section -->
-    <section class="relative h-screen flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 z-0 overflow-hidden">
-            <img
-                class="w-full h-full object-cover"
-                src="<?php echo esc_url( $hero_img['url'] ); ?>"
-                alt="<?php echo esc_attr( $hero_img['alt'] ); ?>"
-                width="1920"
-                height="1080"
-                decoding="async"
-                fetchpriority="high"
-            />
-            <div class="absolute inset-0 z-10 bg-black/40 pointer-events-none" aria-hidden="true"></div>
+    <?php
+    /*
+     * 固定ヘッダーは h-20。画像・スライダー・見出しは top-20〜bottom のステージ内で中央寄せし、
+     * ヘッダー直下の黒帯と画面下端の黒余白が同じになるようにする（全画面 h-screen のまま）。
+     */
+    ?>
+    <section class="relative h-screen overflow-hidden theme-bg-footer js-front-hero">
+        <?php /* 参考: animation-website-youtube の .slider（ステージ内でスライド。余白はフッターと同じ --theme-footer-bg） */ ?>
+        <div
+            class="js-hero-slider absolute inset-x-0 top-20 bottom-0 z-[1] theme-bg-footer pointer-events-none"
+            aria-hidden="true"
+        ></div>
+
+        <div class="absolute inset-x-0 top-20 bottom-0 z-[2] flex justify-center items-center">
+            <div class="js-hero-reveal relative mx-auto w-full overflow-hidden" style="height: 0%;">
+                <img
+                    class="absolute inset-0 h-full w-full object-cover"
+                    src="<?php echo esc_url( $hero_img['url'] ); ?>"
+                    alt="<?php echo esc_attr( $hero_img['alt'] ); ?>"
+                    width="1920"
+                    height="1080"
+                    decoding="async"
+                    fetchpriority="high"
+                />
+                <div class="absolute inset-0 z-10 theme-bg-footer/40 pointer-events-none" aria-hidden="true"></div>
+            </div>
         </div>
 
-        <div class="relative z-20 text-center theme-text-inverse px-4">
+        <div
+            class="absolute inset-x-0 top-20 bottom-0 z-20 flex flex-col items-center justify-center px-4 text-center theme-text-inverse pointer-events-none js-hero-content"
+        >
             <h1 class="text-5xl md:text-7xl mb-6 tracking-wider font-medium"><?php echo esc_html( $site_title ); ?></h1>
             <p class="text-xl md:text-2xl mb-8 tracking-wide"><?php echo esc_html( $concept ); ?></p>
             <a
-                class="inline-block theme-cta-pill px-8 py-3 hover:bg-gray-100 transition-colors"
+                class="inline-block theme-cta-pill px-8 py-3 hover:bg-gray-100 transition-colors pointer-events-auto"
                 href="<?php echo esc_url( $menu_url ); ?>"
             >
                 <?php esc_html_e( 'メニューを見る', 'demo-site-design-restaurant' ); ?>

@@ -131,6 +131,7 @@ function theme_build_color_inline_css() {
 		. '.theme-surface-header{background-color:var(--theme-header-bg);}'
 		. '.theme-bg-page{background-color:var(--theme-bg-page);}'
 		. '.theme-bg-muted{background-color:var(--theme-bg-muted);}'
+		. '.theme-bg-footer{background-color:var(--theme-footer-bg);}'
 		. '.theme-text-strong{color:var(--theme-text-strong);}'
 		. '.theme-text-body{color:var(--theme-text-body);}'
 		. '.theme-text-sub{color:var(--theme-text-sub);}'
@@ -302,7 +303,7 @@ function theme_customize_register_colors( $wp_customize ) {
 			$wp_customize,
 			'theme_color_footer_bg',
 			array(
-				'label'   => __( 'フッター背景（bg-black 相当）', 'demo-site-design-restaurant' ),
+				'label'   => __( '背景（ヒーロー・フッター相当）', 'demo-site-design-restaurant' ),
 				'section' => 'theme_colors',
 			)
 		)
