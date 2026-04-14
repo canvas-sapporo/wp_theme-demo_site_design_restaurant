@@ -3,6 +3,7 @@
  * レストランメニュー（CPT + タクソノミー）
  */
 require_once get_theme_file_path( '/inc/restaurant-menu.php' );
+require_once get_theme_file_path( '/inc/theme-colors.php' );
 
 // ファイルの読み込み
 function add_files() {

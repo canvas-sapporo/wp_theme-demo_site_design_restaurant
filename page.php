@@ -11,7 +11,7 @@
 					<header class="post-header mb-8">
 						<h1 class="post-title text-3xl font-serif"><?php the_title(); ?></h1>
 					</header>
-					<div class="post-content text-gray-700">
+					<div class="post-content theme-text-body">
 						<?php the_content(); ?>
 					</div>
 				</article>

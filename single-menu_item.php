@@ -39,12 +39,12 @@ $price = is_string( $price ) ? $price : '';
 					</div>
 				</header>
 
-				<div class="post-content text-gray-700 leading-relaxed max-w-none">
+				<div class="post-content theme-text-body leading-relaxed max-w-none">
 					<?php the_content(); ?>
 				</div>
 
 				<p class="mt-10">
-					<a href="<?php echo esc_url( theme_get_menu_archive_url() ); ?>" class="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors">
+					<a href="<?php echo esc_url( theme_get_menu_archive_url() ); ?>" class="text-gray-900 underline underline-offset-4 theme-link-subtle-hover transition-colors">
 						<?php esc_html_e( '← メニュー一覧へ戻る', 'demo-site-design-restaurant' ); ?>
 					</a>
 				</p>

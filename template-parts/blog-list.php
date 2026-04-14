@@ -32,7 +32,7 @@ $hero_img = theme_get_blog_hero_image_attrs();
 				decoding="async"
 			/>
 		</div>
-		<div class="relative z-10 text-center text-white px-4">
+		<div class="relative z-10 text-center theme-text-inverse px-4">
 			<h1 class="text-5xl md:text-6xl mb-4 tracking-wider font-serif"><?php echo esc_html( $hero_title ); ?></h1>
 			<?php if ( is_string( $hero_subtitle ) && $hero_subtitle !== '' ) : ?>
 				<p class="text-xl tracking-wide"><?php echo esc_html( $hero_subtitle ); ?></p>
@@ -40,7 +40,7 @@ $hero_img = theme_get_blog_hero_image_attrs();
 		</div>
 	</section>
 
-	<section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+	<section class="py-20 px-4 sm:px-6 lg:px-8 theme-bg-muted">
 		<div class="max-w-7xl mx-auto">
 			<?php if ( have_posts() ) : ?>
 				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -63,7 +63,7 @@ $hero_img = theme_get_blog_hero_image_attrs();
 					?>
 				</div>
 			<?php else : ?>
-				<p class="text-center text-gray-600"><?php esc_html_e( '記事はありません。', 'demo-site-design-restaurant' ); ?></p>
+				<p class="text-center theme-text-sub"><?php esc_html_e( '記事はありません。', 'demo-site-design-restaurant' ); ?></p>
 			<?php endif; ?>
 		</div>
 	</section>

@@ -49,21 +49,21 @@ if ( is_singular( 'post' ) && have_posts() ) :
 			<time datetime="<?php echo esc_attr( get_the_date( DATE_W3C ) ); ?>"><?php echo esc_html( get_the_date( 'Y年n月j日' ) ); ?></time>
 		</p>
 
-		<div class="mt-8 entry-content text-gray-700 leading-[1.85] text-base md:text-lg [&_p]:mb-6 [&_ul]:my-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:my-4 [&_ol]:list-decimal [&_ol]:pl-6 [&_figure]:my-10 [&_img]:w-full [&_img]:h-auto">
+		<div class="mt-8 entry-content theme-text-body leading-[1.85] text-base md:text-lg [&_p]:mb-6 [&_ul]:my-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:my-4 [&_ol]:list-decimal [&_ol]:pl-6 [&_figure]:my-10 [&_img]:w-full [&_img]:h-auto">
 			<?php the_content(); ?>
 		</div>
 
 		<?php if ( $author_display !== '' ) : ?>
-			<p class="mt-14 text-sm md:text-base text-gray-600 text-right"><?php echo esc_html( $author_display ); ?></p>
+			<p class="mt-14 text-sm md:text-base theme-text-sub text-right"><?php echo esc_html( $author_display ); ?></p>
 		<?php endif; ?>
 
 		<?php if ( ! empty( $tags ) && ! is_wp_error( $tags ) ) : ?>
 			<div class="mt-10 pt-10 border-t border-gray-200">
-				<p class="text-xs uppercase tracking-widest text-gray-400 mb-3"><?php esc_html_e( 'タグ', 'demo-site-design-restaurant' ); ?></p>
+				<p class="text-xs uppercase tracking-widest theme-text-soft mb-3"><?php esc_html_e( 'タグ', 'demo-site-design-restaurant' ); ?></p>
 				<ul class="flex flex-wrap gap-2">
 					<?php foreach ( $tags as $tag ) : ?>
 						<li>
-							<a class="inline-block border border-gray-300 px-3 py-1 text-sm text-gray-700 hover:bg-gray-50" href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>"><?php echo esc_html( $tag->name ); ?></a>
+							<a class="inline-block border border-gray-300 px-3 py-1 text-sm theme-text-body theme-hover-bg-muted" href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>"><?php echo esc_html( $tag->name ); ?></a>
 						</li>
 					<?php endforeach; ?>
 				</ul>
@@ -83,7 +83,7 @@ elseif ( have_posts() ) :
 			<header class="post-header mb-8">
 				<h1 class="post-title text-3xl font-serif"><?php the_title(); ?></h1>
 			</header>
-			<div class="post-content text-gray-700">
+			<div class="post-content theme-text-body">
 				<?php the_content(); ?>
 			</div>
 		</article>

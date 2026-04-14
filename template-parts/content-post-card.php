@@ -23,7 +23,7 @@ $date_display   = get_the_date( 'Y年n月j日' );
 ?>
 <a
 	href="<?php echo esc_url( $permalink ); ?>"
-	class="group block bg-white overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+	class="group block theme-bg-page overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
 >
 	<article>
 		<div class="relative h-64 bg-gray-200">
@@ -43,7 +43,7 @@ $date_display   = get_the_date( 'Y年n月j日' );
 			<?php endif; ?>
 			<?php if ( $cat_label !== '' ) : ?>
 				<div class="absolute top-4 left-4">
-					<span class="bg-white px-3 py-1 text-sm text-gray-900"><?php echo esc_html( $cat_label ); ?></span>
+					<span class="theme-bg-page px-3 py-1 text-sm text-gray-900"><?php echo esc_html( $cat_label ); ?></span>
 				</div>
 			<?php endif; ?>
 		</div>
@@ -51,7 +51,7 @@ $date_display   = get_the_date( 'Y年n月j日' );
 			<h2 class="text-xl mb-3 leading-tight text-gray-900 group-hover:underline underline-offset-4 decoration-gray-400 font-serif">
 				<?php echo esc_html( $title ); ?>
 			</h2>
-			<p class="text-gray-600 leading-relaxed mb-4 line-clamp-3">
+			<p class="theme-text-sub leading-relaxed mb-4 line-clamp-3">
 				<?php echo esc_html( get_the_excerpt() ); ?>
 			</p>
 			<div class="flex items-center gap-4 text-sm text-gray-500 flex-wrap">

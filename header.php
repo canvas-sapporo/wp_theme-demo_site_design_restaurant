@@ -6,23 +6,23 @@
     <link rel="icon" href="<?php echo esc_url( get_theme_file_uri( '/images/logo.svg' ) ); ?>" type="image/svg+xml">
     <?php wp_head(); ?>
 </head>
-<body <?php body_class( 'antialiased bg-white' ); ?>>
+<body <?php body_class( 'antialiased theme-body-bg' ); ?>>
 <?php wp_body_open(); ?>
 <div
-    class="js-page-loader fixed inset-0 z-[100] flex flex-col items-center justify-center bg-white/95 backdrop-blur-sm transition-opacity duration-300"
+    class="js-page-loader theme-surface-header fixed inset-0 z-[100] flex flex-col items-center justify-center backdrop-blur-sm transition-opacity duration-300"
     role="status"
     aria-live="polite"
 >
     <span class="sr-only"><?php esc_html_e( '読み込み中', 'demo-site-design-restaurant' ); ?></span>
     <div class="h-12 w-12 rounded-full border-4 border-gray-200 border-t-black animate-spin" aria-hidden="true"></div>
-    <p class="mt-4 text-sm tracking-wide text-gray-600">Loading...</p>
+    <p class="mt-4 text-sm tracking-wide theme-text-sub">Loading...</p>
 </div>
 <?php $nav_items = theme_get_header_nav_items(); ?>
 <div class="min-h-screen flex flex-col">
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+    <header class="theme-surface-header fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="text-2xl font-serif tracking-wider text-black">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="text-2xl font-serif tracking-wider theme-text-strong">
                     <?php echo esc_html( get_bloginfo( 'name', 'display' ) ); ?>
                 </a>
 
@@ -30,7 +30,7 @@
                     <?php foreach ( $nav_items as $item ) : ?>
                         <a
                             href="<?php echo esc_url( $item['url'] ); ?>"
-                            class="<?php echo $item['active'] ? 'text-sm tracking-wide transition-colors text-black' : 'text-sm tracking-wide transition-colors text-gray-600 hover:text-black'; ?>"
+                            class="<?php echo $item['active'] ? 'text-sm tracking-wide theme-nav-link' : 'text-sm tracking-wide theme-nav-link'; ?>"
                             <?php echo $item['active'] ? 'aria-current="page"' : ''; ?>
                         >
                             <?php echo esc_html( $item['label'] ); ?>
@@ -62,7 +62,7 @@
                 <?php foreach ( $nav_items as $item ) : ?>
                     <a
                         href="<?php echo esc_url( $item['url'] ); ?>"
-                        class="<?php echo $item['active'] ? 'block py-3 text-sm tracking-wide transition-colors text-black' : 'block py-3 text-sm tracking-wide transition-colors text-gray-600'; ?>"
+                        class="<?php echo $item['active'] ? 'block py-3 text-sm tracking-wide theme-nav-link' : 'block py-3 text-sm tracking-wide theme-nav-link'; ?>"
                         <?php echo $item['active'] ? 'aria-current="page"' : ''; ?>
                     >
                         <?php echo esc_html( $item['label'] ); ?>

@@ -22,12 +22,12 @@ $footer_email   = get_theme_mod( 'theme_footer_email', 'info@lumiere.jp' );
 $footer_year  = (int) gmdate( 'Y' );
 $footer_brand = get_bloginfo( 'name', 'display' );
 ?>
-    <footer class="bg-black text-white py-12 px-4 sm:px-6 lg:px-8">
+    <footer class="theme-shell-footer py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div>
                     <div class="text-3xl tracking-wider mb-4"><?php echo esc_html( $footer_brand ); ?></div>
-                    <p class="text-gray-400"><?php echo esc_html( $footer_tagline ); ?></p>
+                    <p class="theme-text-on-footer-muted"><?php echo esc_html( $footer_tagline ); ?></p>
                 </div>
 
                 <div>
@@ -36,7 +36,7 @@ $footer_brand = get_bloginfo( 'name', 'display' );
                         <?php foreach ( $nav_items as $item ) : ?>
                             <a
                                 href="<?php echo esc_url( $item['url'] ); ?>"
-                                class="text-gray-400 hover:text-white transition-colors"
+                                class="theme-text-on-footer-muted theme-link-on-inverse transition-colors"
                             >
                                 <?php echo esc_html( $item['label'] ); ?>
                             </a>
@@ -46,7 +46,7 @@ $footer_brand = get_bloginfo( 'name', 'display' );
 
                 <div>
                     <h3 class="text-lg mb-4"><?php esc_html_e( '営業時間', 'demo-site-design-restaurant' ); ?></h3>
-                    <div class="flex items-start gap-2 text-gray-400 mb-2">
+                    <div class="flex items-start gap-2 theme-text-on-footer-muted mb-2">
                         <span class="mt-1 flex-shrink-0" aria-hidden="true">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                         </span>
@@ -60,7 +60,7 @@ $footer_brand = get_bloginfo( 'name', 'display' );
 
                 <div>
                     <h3 class="text-lg mb-4"><?php esc_html_e( 'お問い合わせ', 'demo-site-design-restaurant' ); ?></h3>
-                    <div class="space-y-2 text-gray-400">
+                    <div class="space-y-2 theme-text-on-footer-muted">
                         <div class="flex items-start gap-2">
                             <span class="flex-shrink-0 mt-0.5" aria-hidden="true">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -75,13 +75,13 @@ $footer_brand = get_bloginfo( 'name', 'display' );
                             $tel_href = preg_replace( '/\s+/', '', $footer_phone );
                             $tel_href = preg_replace( '/[^0-9+]/', '', $tel_href );
                             ?>
-                            <a href="tel:<?php echo esc_attr( $tel_href ); ?>" class="hover:text-white transition-colors"><?php echo esc_html( $footer_phone ); ?></a>
+                            <a href="tel:<?php echo esc_attr( $tel_href ); ?>" class="theme-link-on-inverse transition-colors"><?php echo esc_html( $footer_phone ); ?></a>
                         </div>
                         <div class="flex items-center gap-2">
                             <span class="flex-shrink-0" aria-hidden="true">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                             </span>
-                            <a href="mailto:<?php echo esc_attr( $footer_email ); ?>" class="hover:text-white transition-colors break-all"><?php echo esc_html( $footer_email ); ?></a>
+                            <a href="mailto:<?php echo esc_attr( $footer_email ); ?>" class="theme-link-on-inverse transition-colors break-all"><?php echo esc_html( $footer_email ); ?></a>
                         </div>
                     </div>
                 </div>

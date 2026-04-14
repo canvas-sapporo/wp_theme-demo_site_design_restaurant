@@ -43,19 +43,19 @@ $has_any = isset( $counts->publish ) && (int) $counts->publish > 0;
 			/>
 			<div class="absolute inset-0 z-10 bg-black/40 pointer-events-none" aria-hidden="true"></div>
 		</div>
-		<div class="relative z-20 text-center text-white px-4 pt-24 pb-16">
+		<div class="relative z-20 text-center theme-text-inverse px-4 pt-24 pb-16">
 			<h1 class="text-5xl md:text-7xl mb-6 tracking-wider font-serif font-medium"><?php echo esc_html( $hero_title ); ?></h1>
 			<?php if ( is_string( $hero_sub ) && trim( $hero_sub ) !== '' ) : ?>
-				<p class="text-lg md:text-2xl text-white/95 max-w-2xl mx-auto leading-relaxed"><?php echo esc_html( $hero_sub ); ?></p>
+				<p class="text-lg md:text-2xl theme-opacity-95 max-w-2xl mx-auto leading-relaxed theme-text-inverse"><?php echo esc_html( $hero_sub ); ?></p>
 			<?php endif; ?>
 		</div>
 	</section>
 
 	<?php if ( ! is_array( $categories ) || empty( $categories ) ) : ?>
 		<!-- No Menu Categories Section -->
-		<section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+		<section class="py-20 px-4 sm:px-6 lg:px-8 theme-bg-page">
 			<div class="max-w-7xl mx-auto">
-				<p class="text-center text-gray-600"><?php esc_html_e( 'メニューカテゴリを準備中です。', 'demo-site-design-restaurant' ); ?></p>
+				<p class="text-center theme-text-sub"><?php esc_html_e( 'メニューカテゴリを準備中です。', 'demo-site-design-restaurant' ); ?></p>
 				<?php if ( is_string( $footer_note ) && trim( $footer_note ) !== '' ) : ?>
 					<p class="text-center text-sm text-gray-500 max-w-3xl mx-auto leading-relaxed mt-12"><?php echo esc_html( $footer_note ); ?></p>
 				<?php endif; ?>
@@ -63,9 +63,9 @@ $has_any = isset( $counts->publish ) && (int) $counts->publish > 0;
 		</section>
 	<?php elseif ( ! $has_any ) : ?>
 		<!-- No Menu Items Section -->
-		<section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+		<section class="py-20 px-4 sm:px-6 lg:px-8 theme-bg-page">
 			<div class="max-w-7xl mx-auto">
-				<p class="text-center text-gray-600"><?php esc_html_e( 'メニュー品がまだ登録されていません。管理画面の「レストランメニュー」から追加してください。', 'demo-site-design-restaurant' ); ?></p>
+				<p class="text-center theme-text-sub"><?php esc_html_e( 'メニュー品がまだ登録されていません。管理画面の「レストランメニュー」から追加してください。', 'demo-site-design-restaurant' ); ?></p>
 				<?php if ( is_string( $footer_note ) && trim( $footer_note ) !== '' ) : ?>
 					<p class="text-center text-sm text-gray-500 max-w-3xl mx-auto leading-relaxed mt-12"><?php echo esc_html( $footer_note ); ?></p>
 				<?php endif; ?>
@@ -103,7 +103,7 @@ $has_any = isset( $counts->publish ) && (int) $counts->publish > 0;
 				: 'grid';
 			$desc = term_description( $term, 'menu_category' );
 
-			$strip_class = ( $visible_section_index % 2 === 1 ) ? 'bg-gray-50' : 'bg-white';
+			$strip_class = ( $visible_section_index % 2 === 1 ) ? 'theme-bg-muted' : 'theme-bg-page';
 			$visible_section_index++;
 			?>
 			<section class="py-20 px-4 sm:px-6 lg:px-8 <?php echo esc_attr( $strip_class ); ?>">
@@ -114,7 +114,7 @@ $has_any = isset( $counts->publish ) && (int) $counts->publish > 0;
 							<div class="text-center mb-16">
 								<h2 class="text-4xl mb-4"><?php echo esc_html( $term->name ); ?></h2>
 								<?php if ( is_string( $desc ) && trim( wp_strip_all_tags( $desc ) ) !== '' ) : ?>
-									<div class="text-lg text-gray-600"><?php echo wp_kses_post( $desc ); ?></div>
+									<div class="text-lg theme-text-sub"><?php echo wp_kses_post( $desc ); ?></div>
 								<?php endif; ?>
 							</div>
 							<div class="space-y-6">
@@ -133,7 +133,7 @@ $has_any = isset( $counts->publish ) && (int) $counts->publish > 0;
 											<?php endif; ?>
 										</div>
 										<?php if ( $short !== '' ) : ?>
-											<p class="text-gray-600 leading-relaxed"><?php echo esc_html( $short ); ?></p>
+											<p class="theme-text-sub leading-relaxed"><?php echo esc_html( $short ); ?></p>
 										<?php endif; ?>
 									</div>
 								<?php endwhile; ?>
@@ -143,7 +143,7 @@ $has_any = isset( $counts->publish ) && (int) $counts->publish > 0;
 						<div class="text-center mb-12 md:mb-16">
 							<h2 class="text-3xl md:text-4xl mb-4 font-medium"><?php echo esc_html( $term->name ); ?></h2>
 							<?php if ( is_string( $desc ) && trim( wp_strip_all_tags( $desc ) ) !== '' ) : ?>
-								<div class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed"><?php echo wp_kses_post( $desc ); ?></div>
+								<div class="text-lg theme-text-sub max-w-3xl mx-auto leading-relaxed"><?php echo wp_kses_post( $desc ); ?></div>
 							<?php endif; ?>
 						</div>
 						<!-- Menu.tsx 相当: grid + カード（枠線なし・画像 h-64・object-cover） -->
@@ -155,7 +155,7 @@ $has_any = isset( $counts->publish ) && (int) $counts->publish > 0;
 								$price = is_string( $price ) ? $price : '';
 								$short = theme_get_menu_item_short_description( get_the_ID() );
 								?>
-								<article <?php post_class( 'bg-white overflow-hidden hover:shadow-xl transition-shadow duration-300' ); ?>>
+								<article <?php post_class( 'theme-bg-page overflow-hidden hover:shadow-xl transition-shadow duration-300' ); ?>>
 									<div class="relative h-64 overflow-hidden bg-gray-100">
 										<?php if ( has_post_thumbnail() ) : ?>
 											<?php
@@ -169,7 +169,7 @@ $has_any = isset( $counts->publish ) && (int) $counts->publish > 0;
 											);
 											?>
 										<?php else : ?>
-											<div class="absolute inset-0 flex items-center justify-center text-gray-400 text-sm" aria-hidden="true">
+											<div class="absolute inset-0 flex items-center justify-center theme-text-soft text-sm" aria-hidden="true">
 												<?php esc_html_e( '画像なし', 'demo-site-design-restaurant' ); ?>
 											</div>
 										<?php endif; ?>
@@ -182,7 +182,7 @@ $has_any = isset( $counts->publish ) && (int) $counts->publish > 0;
 											<?php endif; ?>
 										</div>
 										<?php if ( $short !== '' ) : ?>
-											<p class="text-gray-600 leading-relaxed"><?php echo esc_html( $short ); ?></p>
+											<p class="theme-text-sub leading-relaxed"><?php echo esc_html( $short ); ?></p>
 										<?php endif; ?>
 									</div>
 								</article>
@@ -198,9 +198,9 @@ $has_any = isset( $counts->publish ) && (int) $counts->publish > 0;
 
 		<!-- Info Section -->
 		<?php if ( is_string( $footer_note ) && trim( $footer_note ) !== '' ) : ?>
-			<section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+			<section class="py-16 px-4 sm:px-6 lg:px-8 theme-bg-muted">
 				<div class="max-w-4xl mx-auto text-center">
-					<p class="text-gray-600 leading-relaxed"><?php echo esc_html( $footer_note ); ?></p>
+					<p class="theme-text-sub leading-relaxed"><?php echo esc_html( $footer_note ); ?></p>
 				</div>
 			</section>
 		<?php endif; ?>

@@ -42,11 +42,11 @@ $gallery_subtitle = get_theme_mod( 'theme_gallery_subtitle', '洗練された空
             <div class="absolute inset-0 z-10 bg-black/40 pointer-events-none" aria-hidden="true"></div>
         </div>
 
-        <div class="relative z-20 text-center text-white px-4">
+        <div class="relative z-20 text-center theme-text-inverse px-4">
             <h1 class="text-5xl md:text-7xl mb-6 tracking-wider font-medium"><?php echo esc_html( $site_title ); ?></h1>
             <p class="text-xl md:text-2xl mb-8 tracking-wide"><?php echo esc_html( $concept ); ?></p>
             <a
-                class="inline-block bg-white text-black px-8 py-3 hover:bg-gray-100 transition-colors"
+                class="inline-block theme-cta-pill px-8 py-3 hover:bg-gray-100 transition-colors"
                 href="<?php echo esc_url( $menu_url ); ?>"
             >
                 <?php esc_html_e( 'メニューを見る', 'demo-site-design-restaurant' ); ?>
@@ -55,7 +55,7 @@ $gallery_subtitle = get_theme_mod( 'theme_gallery_subtitle', '洗練された空
     </section>
 
 
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section class="py-20 px-4 sm:px-6 lg:px-8 theme-bg-page">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
@@ -66,7 +66,7 @@ $gallery_subtitle = get_theme_mod( 'theme_gallery_subtitle', '洗練された空
                             continue;
                         }
                         ?>
-                        <p class="text-lg mb-4 text-gray-700 leading-relaxed"><?php echo esc_html( $about_text ); ?></p>
+                        <p class="text-lg mb-4 theme-text-body leading-relaxed"><?php echo esc_html( $about_text ); ?></p>
                     <?php endforeach; ?>
                 </div>
                 <div class="relative h-96 md:h-full min-h-[400px]">
@@ -85,11 +85,11 @@ $gallery_subtitle = get_theme_mod( 'theme_gallery_subtitle', '洗練された空
     </section>
 
     <!-- Gallery Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <section class="py-20 px-4 sm:px-6 lg:px-8 theme-bg-muted">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-4xl mb-4 font-medium"><?php echo esc_html( $gallery_title ); ?></h2>
-                <p class="text-lg text-gray-600"><?php echo esc_html( $gallery_subtitle ); ?></p>
+                <p class="text-lg theme-text-sub"><?php echo esc_html( $gallery_subtitle ); ?></p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -118,8 +118,8 @@ $gallery_subtitle = get_theme_mod( 'theme_gallery_subtitle', '洗練された空
             $raw = get_post()->post_content;
             if ( is_string( $raw ) && trim( $raw ) !== '' ) :
                 ?>
-                <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-                    <div class="max-w-7xl mx-auto post-content text-gray-700">
+                <section class="py-20 px-4 sm:px-6 lg:px-8 theme-bg-page">
+                    <div class="max-w-7xl mx-auto post-content theme-text-body">
                         <?php the_content(); ?>
                     </div>
                 </section>
@@ -144,10 +144,10 @@ $gallery_subtitle = get_theme_mod( 'theme_gallery_subtitle', '洗練された空
                             <?php endif; ?>
                             <header class="post-header">
                                 <h2 class="post-title text-2xl font-serif">
-                                    <a href="<?php the_permalink(); ?>" class="hover:underline text-black"><?php the_title(); ?></a>
+                                    <a href="<?php the_permalink(); ?>" class="hover:underline theme-text-strong"><?php the_title(); ?></a>
                                 </h2>
                             </header>
-                            <div class="post-content mt-4 text-gray-700">
+                            <div class="post-content mt-4 theme-text-body">
                                 <?php the_excerpt(); ?>
                             </div>
                         </article>
