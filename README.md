@@ -7,9 +7,9 @@
 
 ## 前提環境
 
-- WordPress が動作するローカル環境（例: Local）（
-- PHP / MySQL が WordPress 要件を満たしていること
-- Node.js / npm（フロントエンド資産をビルドする場合）
+- WordPress が動作するローカル環境（例: Local）（Local : Version 10.0.0+6907 ~ / WordPress 6.9.4 ~)
+- PHP / MySQL が WordPress 要件を満たしていること（PHP : 8.2.29 ~ / MySQL 8.0.35 ~)
+- Node.js / npm（フロントエンド資産をビルドする場合）（Node.js : v24.12.0 ~ / npm : 11.7.0 ~)
 
 ## インストール / 有効化
 
