@@ -1,5 +1,9 @@
 import "./styles/theme.css";
 import "./front-hero";
+import "./front-about";
+import "./front-gallery";
+import "./menu-archive";
+import "./blog-list";
 
 (() => {
   const loader = document.querySelector<HTMLElement>(".js-page-loader");

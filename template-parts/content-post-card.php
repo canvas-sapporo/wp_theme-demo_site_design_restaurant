@@ -23,7 +23,7 @@ $date_display   = get_the_date( 'Y年n月j日' );
 ?>
 <a
 	href="<?php echo esc_url( $permalink ); ?>"
-	class="group block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+	class="js-blog-grid-item group block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
 >
 	<article class="theme-bg-page overflow-hidden rounded-xl hover:shadow-xl transition-shadow duration-300">
 		<div class="relative h-64 overflow-hidden bg-gray-100">

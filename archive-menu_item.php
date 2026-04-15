@@ -106,7 +106,7 @@ $has_any = isset( $counts->publish ) && (int) $counts->publish > 0;
 			$strip_class = ( $visible_section_index % 2 === 1 ) ? 'theme-bg-muted' : 'theme-bg-page';
 			$visible_section_index++;
 			?>
-			<section class="py-20 px-4 sm:px-6 lg:px-8 <?php echo esc_attr( $strip_class ); ?>">
+			<section class="js-menu-archive-section py-20 px-4 sm:px-6 lg:px-8 <?php echo esc_attr( $strip_class ); ?>">
 				<div class="max-w-7xl mx-auto">
 					<?php if ( $layout === 'list' ) : ?>
 						<!-- pages/Menu.tsx「コースメニュー」相当: max-w-4xl に見出し＋一覧をまとめる -->
@@ -155,7 +155,7 @@ $has_any = isset( $counts->publish ) && (int) $counts->publish > 0;
 								$price = is_string( $price ) ? $price : '';
 								$short = theme_get_menu_item_short_description( get_the_ID() );
 								?>
-								<article <?php post_class( 'theme-bg-page overflow-hidden rounded-xl hover:shadow-xl transition-shadow duration-300' ); ?>>
+								<article <?php post_class( 'js-menu-grid-item theme-bg-page overflow-hidden rounded-xl hover:shadow-xl transition-shadow duration-300' ); ?>>
 									<div class="relative h-64 overflow-hidden bg-gray-100">
 										<?php if ( has_post_thumbnail() ) : ?>
 											<?php

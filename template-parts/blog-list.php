@@ -40,7 +40,7 @@ $hero_img = theme_get_blog_hero_image_attrs();
 		</div>
 	</section>
 
-	<section class="py-20 px-4 sm:px-6 lg:px-8 theme-bg-muted">
+	<section class="js-blog-grid-section py-20 px-4 sm:px-6 lg:px-8 theme-bg-muted">
 		<div class="max-w-7xl mx-auto">
 			<?php if ( have_posts() ) : ?>
 				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -8,11 +8,73 @@
   html {
     font-size: 16px;
   }
+
+  /*
+   * モダンなスクロールバー（ビューポート）
+   * Firefox: scrollbar-* / Chromium・Safari: ::-webkit-scrollbar
+   */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(64 64 64 / 0.45) rgb(245 245 245 / 0.85);
+  }
+
+  html::-webkit-scrollbar {
+    @apply w-[11px] h-[11px];
+  }
+
+  html::-webkit-scrollbar-track {
+    @apply rounded-full bg-neutral-100/90;
+    margin-block: 4px;
+  }
+
+  html::-webkit-scrollbar-thumb {
+    @apply rounded-full border-[3px] border-solid border-neutral-100/90 bg-clip-padding;
+    background-image: linear-gradient(
+      165deg,
+      rgb(64 64 64 / 0.42) 0%,
+      rgb(23 23 23 / 0.62) 100%
+    );
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.12),
+      0 1px 2px rgb(0 0 0 / 0.08);
+  }
+
+  html::-webkit-scrollbar-thumb:hover {
+    background-image: linear-gradient(
+      165deg,
+      rgb(82 82 82 / 0.58) 0%,
+      rgb(38 38 38 / 0.78) 100%
+    );
+  }
+
+  html::-webkit-scrollbar-corner {
+    @apply bg-transparent;
+  }
 }
 
 /* フロントヒーロー GSAP: アニメーション前にテキストが見えないようにする（動きを減らす設定ではそのまま表示） */
 @media (prefers-reduced-motion: no-preference) {
   .js-front-hero .js-hero-content > * {
+    opacity: 0;
+  }
+
+  /* About セクション: スクロール連動フェードの前は非表示 */
+  .js-front-about {
+    opacity: 0;
+  }
+
+  /* Gallery 画像カード: 行ごと左→右のスタッガー前は非表示 */
+  .js-front-gallery .js-front-gallery-item {
+    opacity: 0;
+  }
+
+  /* メニューアーカイブ・グリッドカード: 同順でスタッガー前は非表示 */
+  .js-menu-archive-section .js-menu-grid-item {
+    opacity: 0;
+  }
+
+  /* ブログ一覧グリッドカード: 同順でスタッガー前は非表示 */
+  .js-blog-grid-section .js-blog-grid-item {
     opacity: 0;
   }
 }

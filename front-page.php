@@ -73,7 +73,7 @@ $gallery_subtitle = get_theme_mod( 'theme_gallery_subtitle', '洗練された空
     </section>
 
 
-    <section class="py-20 px-4 sm:px-6 lg:px-8 theme-bg-page">
+    <section class="js-front-about py-20 px-4 sm:px-6 lg:px-8 theme-bg-page">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
@@ -105,7 +105,7 @@ $gallery_subtitle = get_theme_mod( 'theme_gallery_subtitle', '洗練された空
     </section>
 
     <!-- Gallery Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 theme-bg-muted">
+    <section class="js-front-gallery py-20 px-4 sm:px-6 lg:px-8 theme-bg-muted">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-4xl mb-4 font-medium"><?php echo esc_html( $gallery_title ); ?></h2>
@@ -114,7 +114,7 @@ $gallery_subtitle = get_theme_mod( 'theme_gallery_subtitle', '洗練された空
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 <?php foreach ( $gallery_images as $gallery_image ) : ?>
-                    <div class="liquid-glass-host relative group aspect-square liquidGlass-wrapper--radius-gallery">
+                    <div class="js-front-gallery-item liquid-glass-host relative group aspect-square liquidGlass-wrapper--radius-gallery">
                         <?php theme_liquid_glass_open( array( 'class' => 'liquidGlass-wrapper--fill liquidGlass-wrapper--card liquidGlass-wrapper--radius-gallery' ) ); ?>
                         <img
                             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
