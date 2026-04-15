@@ -51,7 +51,7 @@ $header_site_icon_url = theme_get_brand_icon_url();
                     <?php foreach ( $nav_items as $item ) : ?>
                         <a
                             href="<?php echo esc_url( $item['url'] ); ?>"
-                            class="<?php echo $item['active'] ? 'text-sm tracking-wide theme-nav-link' : 'text-sm tracking-wide theme-nav-link'; ?>"
+                            class="<?php echo $item['active'] ? 'tracking-wide theme-nav-link' : 'tracking-wide theme-nav-link'; ?>"
                             <?php echo $item['active'] ? 'aria-current="page"' : ''; ?>
                         >
                             <?php echo esc_html( $item['label'] ); ?>
@@ -83,7 +83,7 @@ $header_site_icon_url = theme_get_brand_icon_url();
                 <?php foreach ( $nav_items as $item ) : ?>
                     <a
                         href="<?php echo esc_url( $item['url'] ); ?>"
-                        class="<?php echo $item['active'] ? 'block py-3 text-sm tracking-wide theme-nav-link' : 'block py-3 text-sm tracking-wide theme-nav-link'; ?>"
+                        class="<?php echo $item['active'] ? 'block py-3 tracking-wide theme-nav-link' : 'block py-3 tracking-wide theme-nav-link'; ?>"
                         <?php echo $item['active'] ? 'aria-current="page"' : ''; ?>
                     >
                         <?php echo esc_html( $item['label'] ); ?>
