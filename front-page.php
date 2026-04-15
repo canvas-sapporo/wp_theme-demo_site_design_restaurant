@@ -43,18 +43,18 @@ $gallery_subtitle = get_theme_mod( 'theme_gallery_subtitle', '洗練された空
 
         <div class="absolute inset-x-0 top-20 bottom-0 z-[2] flex justify-center items-center">
             <div class="js-hero-reveal relative mx-auto w-full overflow-hidden" style="height: 0%;">
-                <?php theme_liquid_glass_open( array( 'class' => 'liquidGlass-wrapper--fill' ) ); ?>
-                <img
-                    class="absolute inset-0 h-full w-full object-cover"
-                    src="<?php echo esc_url( $hero_img['url'] ); ?>"
-                    alt="<?php echo esc_attr( $hero_img['alt'] ); ?>"
-                    width="1920"
-                    height="1080"
-                    decoding="async"
-                    fetchpriority="high"
-                />
-                <div class="absolute inset-0 z-10 theme-bg-footer/40 pointer-events-none" aria-hidden="true"></div>
-                <?php theme_liquid_glass_close(); ?>
+                <div class="absolute inset-0 w-full min-h-0">
+                    <img
+                        class="absolute inset-0 h-full w-full object-cover"
+                        src="<?php echo esc_url( $hero_img['url'] ); ?>"
+                        alt="<?php echo esc_attr( $hero_img['alt'] ); ?>"
+                        width="1920"
+                        height="1080"
+                        decoding="async"
+                        fetchpriority="high"
+                    />
+                    <div class="absolute inset-0 z-10 theme-bg-footer/40 pointer-events-none" aria-hidden="true"></div>
+                </div>
             </div>
         </div>
 
