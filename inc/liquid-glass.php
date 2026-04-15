@@ -93,6 +93,10 @@ function theme_filter_post_thumbnail_liquid_glass( $html, $post_id, $post_thumbn
 	if ( get_post_type( (int) $post_id ) === 'menu_item' ) {
 		return $html;
 	}
+	// 通常投稿の詳細ページもガラス演出なし。
+	if ( is_singular( 'post' ) ) {
+		return $html;
+	}
 	ob_start();
 	theme_liquid_glass_open( array( 'class' => 'liquidGlass-wrapper--fill liquidGlass-wrapper--card' ) );
 	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Core が生成した img。

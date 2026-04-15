@@ -17,7 +17,7 @@ if ( is_singular( 'post' ) && have_posts() ) :
 		$tags           = get_the_tags();
 		?>
 <main class="pt-20 flex-1">
-	<div class="liquid-glass-host relative w-full h-[min(50vh,560px)] min-h-[280px] bg-gray-200">
+	<div class="relative w-full h-[min(50vh,560px)] min-h-[280px] overflow-hidden bg-gray-200">
 		<?php if ( has_post_thumbnail() ) : ?>
 			<?php
 			the_post_thumbnail(

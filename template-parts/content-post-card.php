@@ -23,23 +23,23 @@ $date_display   = get_the_date( 'Y年n月j日' );
 ?>
 <a
 	href="<?php echo esc_url( $permalink ); ?>"
-	class="group block theme-bg-page overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+	class="group block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
 >
-	<article>
-		<div class="relative h-64 bg-gray-200">
+	<article class="theme-bg-page overflow-hidden rounded-xl hover:shadow-xl transition-shadow duration-300">
+		<div class="relative h-64 overflow-hidden bg-gray-100">
 			<?php if ( has_post_thumbnail() ) : ?>
 				<?php
 				the_post_thumbnail(
 					'large',
 					array(
-						'class'   => 'w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500',
+						'class'    => 'absolute inset-0 w-full h-full object-cover',
 						'loading' => 'lazy',
 						'decoding' => 'async',
 					)
 				);
 				?>
 			<?php else : ?>
-				<div class="w-full h-full bg-gray-200" aria-hidden="true"></div>
+				<div class="absolute inset-0 bg-gray-200" aria-hidden="true"></div>
 			<?php endif; ?>
 			<?php if ( $cat_label !== '' ) : ?>
 				<div class="absolute top-4 left-4">
