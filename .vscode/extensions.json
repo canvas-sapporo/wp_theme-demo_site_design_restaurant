@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "bmewburn.vscode-intelephense-client",
+    "bradlc.vscode-tailwindcss",
+    "dbaeumer.vscode-eslint",
+    "DEVSENSE.profiler-php-vscode",
+    "esbenp.prettier-vscode",
+    "ikappas.composer",
+    "johnbillion.vscode-wordpress-hooks"
+  ],
+  "unwantedRecommendations": []
+}
