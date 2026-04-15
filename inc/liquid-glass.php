@@ -85,6 +85,14 @@ function theme_filter_post_thumbnail_liquid_glass( $html, $post_id, $post_thumbn
 	if ( strpos( $html, 'liquidGlass-wrapper' ) !== false ) {
 		return $html;
 	}
+	// ブログ・投稿一覧のカードではガラス演出を付けず、通常のサムネイル表示にする。
+	if ( is_home() || is_category() || is_tag() || is_date() || is_author() || is_search() ) {
+		return $html;
+	}
+	// メニュー品（一覧・詳細）はガラス演出なし。
+	if ( get_post_type( (int) $post_id ) === 'menu_item' ) {
+		return $html;
+	}
 	ob_start();
 	theme_liquid_glass_open( array( 'class' => 'liquidGlass-wrapper--fill liquidGlass-wrapper--card' ) );
 	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Core が生成した img。

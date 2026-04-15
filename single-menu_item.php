@@ -16,7 +16,7 @@ $price = is_string( $price ) ? $price : '';
 			?>
 			<article <?php post_class(); ?>>
 				<?php if ( has_post_thumbnail() ) : ?>
-					<div class="liquid-glass-host mb-8 relative aspect-video bg-gray-100">
+					<div class="mb-8 relative aspect-video overflow-hidden rounded-xl bg-gray-100">
 						<?php
 						the_post_thumbnail(
 							'large',
