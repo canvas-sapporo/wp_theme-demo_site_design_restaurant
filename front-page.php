@@ -64,7 +64,7 @@ $gallery_subtitle = get_theme_mod( 'theme_gallery_subtitle', '洗練された空
             <h1 class="text-5xl md:text-7xl mb-6 tracking-wider font-medium"><?php echo esc_html( $site_title ); ?></h1>
             <p class="text-xl md:text-2xl mb-8 tracking-wide"><?php echo esc_html( $concept ); ?></p>
             <a
-                class="inline-block theme-cta-pill px-8 py-3 hover:bg-gray-100 transition-colors pointer-events-auto rounded-sm"
+                class="inline-block theme-cta-pill px-8 py-3 hover:bg-gray-100 transition-colors pointer-events-auto rounded-sm shadow-lg"
                 href="<?php echo esc_url( $menu_url ); ?>"
             >
                 <?php esc_html_e( 'メニューを見る', 'demo-site-design-restaurant' ); ?>
