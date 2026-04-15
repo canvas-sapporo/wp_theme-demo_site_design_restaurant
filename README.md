@@ -1,6 +1,6 @@
 # wp_theme-demo_site_design_restaurant
 
-`wp_theme-demo_site_design_restaurant` は、レストラン向けデモサイトを想定した **WordPress テーマ** です。  
+`wp_theme-demo_site_design_restaurant` は、レストラン向けデモサイトを想定した **WordPress テーマ** です。
 トップページ、アーカイブ、個別ページなどのテンプレートを含み、フロントエンド資産のビルドには Node.js ベースのツールを利用します。
 
 <img alt="image" src="https://github.com/canvas-sapporo/wp_theme-demo_site_design_restaurant/blob/main/README.gif" />
@@ -10,6 +10,7 @@
 - WordPress が動作するローカル環境（例: Local）（Local : Version 10.0.0+6907 ~ / WordPress 6.9.4 ~)
 - PHP / MySQL が WordPress 要件を満たしていること（PHP : 8.2.29 ~ / MySQL 8.0.35 ~)
 - Node.js / npm（フロントエンド資産をビルドする場合）（Node.js : v24.12.0 ~ / npm : 11.7.0 ~)
+- 開発環境：VSCode or Cursor
 
 ## インストール / 有効化
 
