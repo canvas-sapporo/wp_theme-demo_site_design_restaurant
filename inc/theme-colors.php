@@ -23,9 +23,9 @@ function theme_get_color_defaults() {
 		'theme_color_footer_bg'       => '#000000',
 		'theme_color_text_inverse'    => '#ffffff',
 		'theme_color_text_strong'     => '#000000',
-		'theme_color_text_body'       => '#374151',
-		'theme_color_text_sub'        => '#4b5563',
-		'theme_color_text_soft'       => '#9ca3af',
+		'theme_color_text_body'       => '#000000',
+		'theme_color_text_sub'        => '#000000',
+		'theme_color_text_soft'       => '#7a7a7a',
 	);
 }
 
@@ -265,7 +265,7 @@ function theme_customize_register_colors( $wp_customize ) {
 			$wp_customize,
 			'theme_color_bg_page',
 			array(
-				'label'   => __( '背景（bg-white 相当）', 'demo-site-design-restaurant' ),
+				'label'   => __( '背景', 'demo-site-design-restaurant' ),
 				'section' => 'theme_colors',
 			)
 		)
@@ -284,7 +284,7 @@ function theme_customize_register_colors( $wp_customize ) {
 			$wp_customize,
 			'theme_color_bg_muted',
 			array(
-				'label'   => __( '背景（bg-gray-50 相当）', 'demo-site-design-restaurant' ),
+				'label'   => __( '背景（サブ）', 'demo-site-design-restaurant' ),
 				'section' => 'theme_colors',
 			)
 		)
@@ -303,7 +303,7 @@ function theme_customize_register_colors( $wp_customize ) {
 			$wp_customize,
 			'theme_color_footer_bg',
 			array(
-				'label'   => __( '背景（ヒーロー・フッター相当）', 'demo-site-design-restaurant' ),
+				'label'   => __( '背景（Hero・Footer相当）', 'demo-site-design-restaurant' ),
 				'section' => 'theme_colors',
 			)
 		)
@@ -322,7 +322,7 @@ function theme_customize_register_colors( $wp_customize ) {
 			$wp_customize,
 			'theme_color_text_inverse',
 			array(
-				'label'   => __( '文字色（text-white 相当）', 'demo-site-design-restaurant' ),
+				'label'   => __( '文字色（逆色（Header・Loading））', 'demo-site-design-restaurant' ),
 				'section' => 'theme_colors',
 			)
 		)
@@ -341,7 +341,7 @@ function theme_customize_register_colors( $wp_customize ) {
 			$wp_customize,
 			'theme_color_text_strong',
 			array(
-				'label'   => __( '文字色（text-black 相当）', 'demo-site-design-restaurant' ),
+				'label'   => __( '文字色（強調）', 'demo-site-design-restaurant' ),
 				'section' => 'theme_colors',
 			)
 		)
@@ -360,7 +360,7 @@ function theme_customize_register_colors( $wp_customize ) {
 			$wp_customize,
 			'theme_color_text_body',
 			array(
-				'label'   => __( '文字色（text-gray-700 相当）', 'demo-site-design-restaurant' ),
+				'label'   => __( '文字色（本文（段落））', 'demo-site-design-restaurant' ),
 				'section' => 'theme_colors',
 			)
 		)
@@ -379,7 +379,7 @@ function theme_customize_register_colors( $wp_customize ) {
 			$wp_customize,
 			'theme_color_text_sub',
 			array(
-				'label'   => __( '文字色（text-gray-600 相当）', 'demo-site-design-restaurant' ),
+				'label'   => __( '文字色（補助（サブテキスト））', 'demo-site-design-restaurant' ),
 				'section' => 'theme_colors',
 			)
 		)
@@ -398,7 +398,7 @@ function theme_customize_register_colors( $wp_customize ) {
 			$wp_customize,
 			'theme_color_text_soft',
 			array(
-				'label'   => __( '文字色（text-gray-400 相当）', 'demo-site-design-restaurant' ),
+				'label'   => __( '文字色（淡色（控えめ表示））', 'demo-site-design-restaurant' ),
 				'section' => 'theme_colors',
 			)
 		)

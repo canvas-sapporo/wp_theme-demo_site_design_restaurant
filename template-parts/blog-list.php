@@ -1,6 +1,6 @@
 <?php
 /**
- * ブログ一覧（ヒーロー + カードグリッド）。
+ * ブログ一覧（Hero + カードグリッド）。
  *
  * @package demo-site-design-restaurant
  *

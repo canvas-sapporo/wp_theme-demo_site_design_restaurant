@@ -3,7 +3,7 @@
  * Footer テンプレート（React Footer.tsx 相当）
  *
  * 店名: 設定 → 一般「サイトのタイトル」
- * キャッチ: 外観 → カスタマイズ「フロントページ（ヒーロー）」の「コンセプト」（theme_hero_concept）
+ * キャッチ: 外観 → カスタマイズ「フロントページ（Hero）」の「コンセプト」（theme_hero_concept）
  * 連絡先・営業時間: 外観 → カスタマイズ「フッター」
  */
 $nav_items = theme_get_header_nav_items();

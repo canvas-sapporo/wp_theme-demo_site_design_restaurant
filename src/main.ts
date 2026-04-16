@@ -4,6 +4,7 @@ import "./front-about";
 import "./front-gallery";
 import "./menu-archive";
 import "./blog-list";
+import "./silk";
 
 (() => {
   const loader = document.querySelector<HTMLElement>(".js-page-loader");

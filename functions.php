@@ -54,7 +54,7 @@ function theme_customize_register( $wp_customize ) {
     $wp_customize->add_section(
         'theme_hero',
         array(
-            'title'       => __( 'フロントページ（ヒーロー）', 'demo-site-design-restaurant' ),
+            'title'       => __( 'フロントページ（Hero）', 'demo-site-design-restaurant' ),
             'description' => __( '固定ページをホームにしたときのメインビジュアルです。「コンセプト」はヒーロー直下とフッターのキャッチコピーに共通で使われます（設定 → 一般の「キャッチフレーズ」とは別です）。', 'demo-site-design-restaurant' ),
             'priority'    => 35,
         )
