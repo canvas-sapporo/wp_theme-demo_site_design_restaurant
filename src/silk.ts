@@ -5,6 +5,12 @@ import fragmentShader from "./shaders/fragmentShader.glsl?raw";
 
 const SILK_CANVAS_SELECTOR = "#theme-silk-canvas";
 
+function getSilkWaveColor() {
+  const rootStyle = window.getComputedStyle(document.documentElement);
+  const cssVar = rootStyle.getPropertyValue("--theme-silk-wave").trim();
+  return cssVar || "#ffffff";
+}
+
 function initSilkBackground() {
   const canvas =
     document.querySelector<HTMLCanvasElement>(SILK_CANVAS_SELECTOR);
@@ -67,7 +73,7 @@ function initSilkBackground() {
     uniforms: {
       uFrequency: { value: new THREE.Vector2(10, 20) },
       uTime: { value: 0 },
-      uColor: { value: new THREE.Color("#ffffff") },
+      uColor: { value: new THREE.Color(getSilkWaveColor()) },
       uAmplitude: { value: params.amplitude },
       uDetailAmplitude: { value: params.detailAmplitude },
       uAmpDecay: { value: params.ampDecay },

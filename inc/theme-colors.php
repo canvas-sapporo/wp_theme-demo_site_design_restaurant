@@ -26,6 +26,7 @@ function theme_get_color_defaults() {
 		'theme_color_text_body'       => '#000000',
 		'theme_color_text_sub'        => '#000000',
 		'theme_color_text_soft'       => '#7a7a7a',
+		'theme_color_silk_wave'       => '#ffffff',
 	);
 }
 
@@ -90,6 +91,7 @@ function theme_build_color_inline_css() {
 	$text_body  = sanitize_hex_color( (string) theme_get_color_mod( 'theme_color_text_body', $d['theme_color_text_body'] ) );
 	$text_sub   = sanitize_hex_color( (string) theme_get_color_mod( 'theme_color_text_sub', $d['theme_color_text_sub'] ) );
 	$text_soft  = sanitize_hex_color( (string) theme_get_color_mod( 'theme_color_text_soft', $d['theme_color_text_soft'] ) );
+	$silk_wave  = sanitize_hex_color( (string) theme_get_color_mod( 'theme_color_silk_wave', $d['theme_color_silk_wave'] ) );
 
 	if ( ! $bg_page ) {
 		$bg_page = (string) $d['theme_color_bg_page'];
@@ -115,6 +117,9 @@ function theme_build_color_inline_css() {
 	if ( ! $text_soft ) {
 		$text_soft = (string) $d['theme_color_text_soft'];
 	}
+	if ( ! $silk_wave ) {
+		$silk_wave = (string) $d['theme_color_silk_wave'];
+	}
 
 	$css = ':root{'
 		. '--theme-header-bg:' . esc_attr( $header_rgba ) . ';'
@@ -126,6 +131,7 @@ function theme_build_color_inline_css() {
 		. '--theme-text-body:' . esc_attr( $text_body ) . ';'
 		. '--theme-text-sub:' . esc_attr( $text_sub ) . ';'
 		. '--theme-text-soft:' . esc_attr( $text_soft ) . ';'
+		. '--theme-silk-wave:' . esc_attr( $silk_wave ) . ';'
 		. '}'
 		. 'body.antialiased.theme-body-bg{background-color:var(--theme-bg-page);}'
 		. '.theme-surface-header{background-color:var(--theme-header-bg);}'
@@ -400,6 +406,26 @@ function theme_customize_register_colors( $wp_customize ) {
 			array(
 				'label'   => __( '文字色（淡色（控えめ表示））', 'demo-site-design-restaurant' ),
 				'section' => 'theme_colors',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'theme_color_silk_wave',
+		array(
+			'default'           => $d['theme_color_silk_wave'],
+			'sanitize_callback' => 'sanitize_hex_color',
+			'transport'         => 'refresh',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'theme_color_silk_wave',
+			array(
+				'label'       => __( 'シルク波の色', 'demo-site-design-restaurant' ),
+				'description' => __( '固定背景のシルク波の色を変更します。', 'demo-site-design-restaurant' ),
+				'section'     => 'theme_colors',
 			)
 		)
 	);
