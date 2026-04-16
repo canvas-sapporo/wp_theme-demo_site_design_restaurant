@@ -105,7 +105,7 @@ $gallery_subtitle = get_theme_mod( 'theme_gallery_subtitle', '洗練された空
     </section>
 
     <!-- Gallery Section -->
-    <section class="js-front-gallery py-20 px-4 sm:px-6 lg:px-8 theme-bg-muted">
+    <section class="js-front-gallery pt-10 pb-20 px-4 sm:px-6 lg:px-8 theme-bg-muted">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-4xl mb-4 font-medium"><?php echo esc_html( $gallery_title ); ?></h2>
