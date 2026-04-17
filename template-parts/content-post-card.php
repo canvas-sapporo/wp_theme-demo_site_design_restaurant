@@ -54,7 +54,7 @@ $date_display   = get_the_date( 'Y年n月j日' );
 			<p class="theme-text-sub leading-relaxed mb-4 line-clamp-3">
 				<?php echo esc_html( get_the_excerpt() ); ?>
 			</p>
-			<div class="flex items-center gap-4 text-sm text-gray-500 flex-wrap">
+			<div class="theme-text-post-card-meta flex items-center gap-4 text-sm flex-wrap">
 				<div class="flex items-center gap-1">
 					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
 					<time datetime="<?php echo esc_attr( get_the_date( DATE_W3C ) ); ?>"><?php echo esc_html( $date_display ); ?></time>

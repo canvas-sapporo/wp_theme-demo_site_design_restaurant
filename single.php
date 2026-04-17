@@ -45,7 +45,7 @@ if ( is_singular( 'post' ) && have_posts() ) :
 	</header>
 
 	<div class="max-w-3xl mx-auto px-4 sm:px-6 pb-12 md:pb-20">
-		<p class="text-sm text-gray-500">
+		<p class="theme-text-single-date text-sm">
 			<time datetime="<?php echo esc_attr( get_the_date( DATE_W3C ) ); ?>"><?php echo esc_html( get_the_date( 'Y年n月j日' ) ); ?></time>
 		</p>
 
@@ -59,7 +59,7 @@ if ( is_singular( 'post' ) && have_posts() ) :
 
 		<?php if ( ! empty( $tags ) && ! is_wp_error( $tags ) ) : ?>
 			<div class="mt-10 pt-10 border-t border-gray-200">
-				<p class="text-xs uppercase tracking-widest theme-text-soft mb-3"><?php esc_html_e( 'タグ', 'demo-site-design-restaurant' ); ?></p>
+				<p class="text-xs uppercase tracking-widest theme-text-strong mb-3"><?php esc_html_e( 'タグ', 'demo-site-design-restaurant' ); ?></p>
 				<ul class="flex flex-wrap gap-2">
 					<?php foreach ( $tags as $tag ) : ?>
 						<li>

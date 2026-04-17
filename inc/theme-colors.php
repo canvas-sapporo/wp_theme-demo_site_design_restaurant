@@ -26,6 +26,8 @@ function theme_get_color_defaults() {
 		'theme_color_text_body'       => '#000000',
 		'theme_color_text_sub'        => '#000000',
 		'theme_color_text_soft'       => '#7a7a7a',
+		'theme_color_post_card_meta'  => '#000000',
+		'theme_color_single_date'     => '#000000',
 		'theme_color_silk_wave'       => '#ffffff',
 	);
 }
@@ -91,6 +93,8 @@ function theme_build_color_inline_css() {
 	$text_body  = sanitize_hex_color( (string) theme_get_color_mod( 'theme_color_text_body', $d['theme_color_text_body'] ) );
 	$text_sub   = sanitize_hex_color( (string) theme_get_color_mod( 'theme_color_text_sub', $d['theme_color_text_sub'] ) );
 	$text_soft  = sanitize_hex_color( (string) theme_get_color_mod( 'theme_color_text_soft', $d['theme_color_text_soft'] ) );
+	$post_meta  = sanitize_hex_color( (string) theme_get_color_mod( 'theme_color_post_card_meta', $d['theme_color_post_card_meta'] ) );
+	$single_dt  = sanitize_hex_color( (string) theme_get_color_mod( 'theme_color_single_date', $d['theme_color_single_date'] ) );
 	$silk_wave  = sanitize_hex_color( (string) theme_get_color_mod( 'theme_color_silk_wave', $d['theme_color_silk_wave'] ) );
 
 	if ( ! $bg_page ) {
@@ -117,6 +121,12 @@ function theme_build_color_inline_css() {
 	if ( ! $text_soft ) {
 		$text_soft = (string) $d['theme_color_text_soft'];
 	}
+	if ( ! $post_meta ) {
+		$post_meta = (string) $d['theme_color_post_card_meta'];
+	}
+	if ( ! $single_dt ) {
+		$single_dt = (string) $d['theme_color_single_date'];
+	}
 	if ( ! $silk_wave ) {
 		$silk_wave = (string) $d['theme_color_silk_wave'];
 	}
@@ -131,6 +141,8 @@ function theme_build_color_inline_css() {
 		. '--theme-text-body:' . esc_attr( $text_body ) . ';'
 		. '--theme-text-sub:' . esc_attr( $text_sub ) . ';'
 		. '--theme-text-soft:' . esc_attr( $text_soft ) . ';'
+		. '--theme-text-post-card-meta:' . esc_attr( $post_meta ) . ';'
+		. '--theme-text-single-date:' . esc_attr( $single_dt ) . ';'
 		. '--theme-silk-wave:' . esc_attr( $silk_wave ) . ';'
 		. '}'
 		. 'body.antialiased.theme-body-bg{background-color:var(--theme-bg-page);}'
@@ -142,6 +154,8 @@ function theme_build_color_inline_css() {
 		. '.theme-text-body{color:var(--theme-text-body);}'
 		. '.theme-text-sub{color:var(--theme-text-sub);}'
 		. '.theme-text-soft{color:var(--theme-text-soft);}'
+		. '.theme-text-post-card-meta{color:var(--theme-text-post-card-meta);}'
+		. '.theme-text-single-date{color:var(--theme-text-single-date);}'
 		. '.theme-text-inverse{color:var(--theme-text-inverse);}'
 		. '.theme-shell-footer{background-color:var(--theme-footer-bg);color:var(--theme-text-inverse);}'
 		. '.theme-text-on-footer-muted{color:var(--theme-text-soft);}'
@@ -406,6 +420,46 @@ function theme_customize_register_colors( $wp_customize ) {
 			array(
 				'label'   => __( '文字色（淡色（控えめ表示））', 'demo-site-design-restaurant' ),
 				'section' => 'theme_colors',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'theme_color_post_card_meta',
+		array(
+			'default'           => $d['theme_color_post_card_meta'],
+			'sanitize_callback' => 'sanitize_hex_color',
+			'transport'         => 'refresh',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'theme_color_post_card_meta',
+			array(
+				'label'       => __( '文字色（ブログ一覧カードの日付・著者）', 'demo-site-design-restaurant' ),
+				'description' => __( '投稿一覧のカード下部の日付・アイコン・著者名の色です。', 'demo-site-design-restaurant' ),
+				'section'     => 'theme_colors',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'theme_color_single_date',
+		array(
+			'default'           => $d['theme_color_single_date'],
+			'sanitize_callback' => 'sanitize_hex_color',
+			'transport'         => 'refresh',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'theme_color_single_date',
+			array(
+				'label'       => __( '文字色（記事ページの日付）', 'demo-site-design-restaurant' ),
+				'description' => __( '単一投稿ページの本文上にある公開日の色です。', 'demo-site-design-restaurant' ),
+				'section'     => 'theme_colors',
 			)
 		)
 	);
