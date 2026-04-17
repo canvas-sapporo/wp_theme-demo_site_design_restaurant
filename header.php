@@ -54,7 +54,7 @@ $header_site_icon_url = theme_get_brand_icon_url();
                     <?php foreach ( $nav_items as $item ) : ?>
                         <a
                             href="<?php echo esc_url( $item['url'] ); ?>"
-                            class="<?php echo $item['active'] ? 'tracking-wide theme-nav-link' : 'tracking-wide theme-nav-link'; ?>"
+                            class="<?php echo $item['active'] ? 'tracking-wide theme-nav-link' : 'tracking-wide theme-nav-link hover:underline'; ?>"
                             <?php echo $item['active'] ? 'aria-current="page"' : ''; ?>
                         >
                             <?php echo esc_html( $item['label'] ); ?>
