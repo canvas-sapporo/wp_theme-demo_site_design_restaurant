@@ -61,10 +61,10 @@ $gallery_subtitle = get_theme_mod( 'theme_gallery_subtitle', '洗練された空
         <div
             class="absolute inset-x-0 top-20 bottom-0 z-20 flex flex-col items-center justify-center px-4 text-center theme-text-inverse pointer-events-none js-hero-content"
         >
-            <h1 class="text-5xl md:text-7xl mb-6 tracking-wider font-medium"><?php echo esc_html( $site_title ); ?></h1>
-            <p class="text-xl md:text-2xl mb-8 tracking-wide"><?php echo esc_html( $concept ); ?></p>
+            <h1 class="text-5xl md:text-7xl mb-6 tracking-wider font-medium theme-font-hero-title"><?php echo esc_html( $site_title ); ?></h1>
+            <p class="text-xl md:text-2xl mb-8 tracking-wide theme-font-hero-concept"><?php echo esc_html( $concept ); ?></p>
             <a
-                class="inline-block theme-cta-pill px-8 py-3 hover:bg-gray-100 transition-colors pointer-events-auto rounded-sm shadow-lg hover:font-bold hover:shadow-xl"
+                class="inline-block theme-cta-pill theme-font-button px-8 py-3 hover:bg-gray-100 transition-colors pointer-events-auto rounded-sm shadow-lg hover:font-bold hover:shadow-xl"
                 href="<?php echo esc_url( $menu_url ); ?>"
             >
                 <?php esc_html_e( 'メニューを見る', 'demo-site-design-restaurant' ); ?>
@@ -77,7 +77,7 @@ $gallery_subtitle = get_theme_mod( 'theme_gallery_subtitle', '洗練された空
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h2 class="text-4xl mb-6 font-medium"><?php echo esc_html( $about_title ); ?></h2>
+                    <h2 class="text-4xl mb-6 font-medium theme-font-heading"><?php echo esc_html( $about_title ); ?></h2>
                     <?php foreach ( $about_texts as $about_text ) : ?>
                         <?php
                         if ( ! is_string( $about_text ) || trim( $about_text ) === '' ) {
@@ -108,7 +108,7 @@ $gallery_subtitle = get_theme_mod( 'theme_gallery_subtitle', '洗練された空
     <section class="js-front-gallery pt-10 pb-20 px-4 sm:px-6 lg:px-8 theme-bg-muted">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl mb-4 font-medium"><?php echo esc_html( $gallery_title ); ?></h2>
+                <h2 class="text-4xl mb-4 font-medium theme-font-heading"><?php echo esc_html( $gallery_title ); ?></h2>
                 <p class="text-lg theme-text-sub"><?php echo esc_html( $gallery_subtitle ); ?></p>
             </div>
 
@@ -165,7 +165,7 @@ $gallery_subtitle = get_theme_mod( 'theme_gallery_subtitle', '洗練された空
                                 </a>
                             <?php endif; ?>
                             <header class="post-header">
-                                <h2 class="post-title text-2xl font-serif">
+                                <h2 class="post-title text-2xl theme-font-title">
                                     <a href="<?php the_permalink(); ?>" class="hover:underline theme-text-strong"><?php the_title(); ?></a>
                                 </h2>
                             </header>

@@ -40,7 +40,7 @@ if ( is_singular( 'post' ) && have_posts() ) :
 					<span class="inline-block bg-gray-100 text-gray-900 px-3 py-1"><?php echo esc_html( $cat_label ); ?></span>
 				</p>
 			<?php endif; ?>
-			<h1 class="text-3xl md:text-4xl lg:text-[2.75rem] font-normal text-gray-900 leading-tight tracking-tight font-serif"><?php the_title(); ?></h1>
+			<h1 class="text-3xl md:text-4xl lg:text-[2.75rem] font-normal text-gray-900 leading-tight tracking-tight theme-font-title"><?php the_title(); ?></h1>
 		</div>
 	</header>
 
@@ -63,7 +63,7 @@ if ( is_singular( 'post' ) && have_posts() ) :
 				<ul class="flex flex-wrap gap-2">
 					<?php foreach ( $tags as $tag ) : ?>
 						<li>
-							<a class="inline-block border border-gray-300 px-3 py-1 text-sm theme-text-body theme-hover-bg-muted" href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>"><?php echo esc_html( $tag->name ); ?></a>
+							<a class="inline-block border border-gray-300 px-3 py-1 text-sm theme-text-body theme-hover-bg-muted theme-font-link-inline" href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>"><?php echo esc_html( $tag->name ); ?></a>
 						</li>
 					<?php endforeach; ?>
 				</ul>
@@ -81,7 +81,7 @@ elseif ( have_posts() ) :
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<article <?php post_class( 'post-item' ); ?>>
 			<header class="post-header mb-8">
-				<h1 class="post-title text-3xl font-serif"><?php the_title(); ?></h1>
+				<h1 class="post-title text-3xl theme-font-title"><?php the_title(); ?></h1>
 			</header>
 			<div class="post-content theme-text-body">
 				<?php the_content(); ?>

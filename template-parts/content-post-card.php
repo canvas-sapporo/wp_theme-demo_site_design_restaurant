@@ -48,7 +48,7 @@ $date_display   = get_the_date( 'Y年n月j日' );
 			<?php endif; ?>
 		</div>
 		<div class="p-6">
-			<h2 class="text-xl mb-3 leading-tight text-gray-900 group-hover:underline underline-offset-4 decoration-gray-400 font-serif">
+			<h2 class="text-xl mb-3 leading-tight text-gray-900 group-hover:underline underline-offset-4 decoration-gray-400 theme-font-title">
 				<?php echo esc_html( $title ); ?>
 			</h2>
 			<p class="theme-text-sub leading-relaxed mb-4 line-clamp-3">

@@ -9,7 +9,7 @@
 				?>
 				<article <?php post_class( 'post-item' ); ?>>
 					<header class="post-header mb-8">
-						<h1 class="post-title text-3xl font-serif"><?php the_title(); ?></h1>
+						<h1 class="post-title text-3xl theme-font-title"><?php the_title(); ?></h1>
 					</header>
 					<div class="post-content theme-text-body">
 						<?php the_content(); ?>

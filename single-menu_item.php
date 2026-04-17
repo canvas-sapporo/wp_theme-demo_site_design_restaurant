@@ -32,7 +32,7 @@ $price = is_string( $price ) ? $price : '';
 
 				<header class="mb-6">
 					<div class="flex flex-wrap justify-between items-baseline gap-4">
-						<h1 class="text-3xl font-serif font-medium"><?php the_title(); ?></h1>
+						<h1 class="text-3xl font-medium theme-font-title"><?php the_title(); ?></h1>
 						<?php if ( $price !== '' ) : ?>
 							<span class="text-xl whitespace-nowrap"><?php echo esc_html( $price ); ?></span>
 						<?php endif; ?>

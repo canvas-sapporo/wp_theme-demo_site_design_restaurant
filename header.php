@@ -32,7 +32,7 @@ $header_site_icon_url = theme_get_brand_icon_url();
             <div class="flex justify-between items-center h-20">
                 <a
                     href="<?php echo esc_url( home_url( '/' ) ); ?>"
-                    class="flex items-center gap-2 md:gap-3 min-w-0 shrink"
+                    class="theme-font-header-title flex items-center gap-2 md:gap-3 min-w-0 shrink"
                     aria-label="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
                 >
                     <?php theme_liquid_glass_open( array( 'class' => 'liquidGlass-wrapper--icon' ) ); ?>
@@ -45,7 +45,7 @@ $header_site_icon_url = theme_get_brand_icon_url();
                         decoding="async"
                     />
                     <?php theme_liquid_glass_close(); ?>
-                    <span class="text-2xl font-serif tracking-wider theme-text-strong truncate hidden md:block">
+                    <span class="text-2xl tracking-wider theme-text-strong truncate hidden md:block">
                         <?php echo esc_html( get_bloginfo( 'name', 'display' ) ); ?>
                     </span>
                 </a>

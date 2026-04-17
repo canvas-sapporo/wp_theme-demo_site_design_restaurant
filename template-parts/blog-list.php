@@ -33,9 +33,9 @@ $hero_img = theme_get_blog_hero_image_attrs();
 			/>
 		</div>
 		<div class="relative z-10 text-center theme-text-inverse px-4">
-			<h1 class="text-5xl md:text-6xl mb-4 tracking-wider font-serif"><?php echo esc_html( $hero_title ); ?></h1>
+			<h1 class="text-5xl md:text-6xl mb-4 tracking-wider theme-font-hero-title"><?php echo esc_html( $hero_title ); ?></h1>
 			<?php if ( is_string( $hero_subtitle ) && $hero_subtitle !== '' ) : ?>
-				<p class="text-xl tracking-wide"><?php echo esc_html( $hero_subtitle ); ?></p>
+				<p class="text-xl tracking-wide theme-font-hero-concept"><?php echo esc_html( $hero_subtitle ); ?></p>
 			<?php endif; ?>
 		</div>
 	</section>

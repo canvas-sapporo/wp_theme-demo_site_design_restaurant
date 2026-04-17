@@ -41,13 +41,13 @@ $footer_site_icon_url = theme_get_brand_icon_url();
                             decoding="async"
                         />
                         <?php theme_liquid_glass_close(); ?>
-                        <span class="text-3xl tracking-wider min-w-0 truncate"><?php echo esc_html( $footer_brand ); ?></span>
+                        <span class="text-3xl tracking-wider min-w-0 truncate theme-font-title"><?php echo esc_html( $footer_brand ); ?></span>
                     </a>
                     <p class="theme-text-on-footer-muted"><?php echo esc_html( $footer_tagline ); ?></p>
                 </div>
 
                 <div>
-                    <h3 class="text-lg mb-4"><?php esc_html_e( 'ナビゲーション', 'demo-site-design-restaurant' ); ?></h3>
+                    <h3 class="text-lg mb-4 theme-font-heading"><?php esc_html_e( 'ナビゲーション', 'demo-site-design-restaurant' ); ?></h3>
                     <nav class="flex flex-col gap-2" aria-label="<?php esc_attr_e( 'フッターナビゲーション', 'demo-site-design-restaurant' ); ?>">
                         <?php foreach ( $nav_items as $item ) : ?>
                             <a
@@ -61,7 +61,7 @@ $footer_site_icon_url = theme_get_brand_icon_url();
                 </div>
 
                 <div>
-                    <h3 class="text-lg mb-4"><?php esc_html_e( '営業時間', 'demo-site-design-restaurant' ); ?></h3>
+                    <h3 class="text-lg mb-4 theme-font-heading"><?php esc_html_e( '営業時間', 'demo-site-design-restaurant' ); ?></h3>
                     <div class="flex items-start gap-2 theme-text-on-footer-muted mb-2">
                         <span class="mt-1 flex-shrink-0" aria-hidden="true">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -75,7 +75,7 @@ $footer_site_icon_url = theme_get_brand_icon_url();
                 </div>
 
                 <div>
-                    <h3 class="text-lg mb-4"><?php esc_html_e( 'お問い合わせ', 'demo-site-design-restaurant' ); ?></h3>
+                    <h3 class="text-lg mb-4 theme-font-heading"><?php esc_html_e( 'お問い合わせ', 'demo-site-design-restaurant' ); ?></h3>
                     <div class="space-y-2 theme-text-on-footer-muted">
                         <div class="flex items-start gap-2">
                             <span class="flex-shrink-0 mt-0.5" aria-hidden="true">

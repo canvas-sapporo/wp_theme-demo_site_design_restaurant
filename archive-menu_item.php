@@ -44,9 +44,9 @@ $has_any = isset( $counts->publish ) && (int) $counts->publish > 0;
 			<div class="absolute inset-0 z-10 bg-black/40 pointer-events-none" aria-hidden="true"></div>
 		</div>
 		<div class="relative z-20 text-center theme-text-inverse px-4 pt-24 pb-16">
-			<h1 class="text-5xl md:text-7xl mb-6 tracking-wider font-serif font-medium"><?php echo esc_html( $hero_title ); ?></h1>
+			<h1 class="text-5xl md:text-7xl mb-6 tracking-wider font-medium theme-font-hero-title"><?php echo esc_html( $hero_title ); ?></h1>
 			<?php if ( is_string( $hero_sub ) && trim( $hero_sub ) !== '' ) : ?>
-				<p class="text-lg md:text-2xl theme-opacity-95 max-w-2xl mx-auto leading-relaxed theme-text-inverse"><?php echo esc_html( $hero_sub ); ?></p>
+				<p class="text-lg md:text-2xl theme-opacity-95 max-w-2xl mx-auto leading-relaxed theme-text-inverse theme-font-hero-concept"><?php echo esc_html( $hero_sub ); ?></p>
 			<?php endif; ?>
 		</div>
 	</section>
@@ -112,7 +112,7 @@ $has_any = isset( $counts->publish ) && (int) $counts->publish > 0;
 						<!-- pages/Menu.tsx「コースメニュー」相当: max-w-4xl に見出し＋一覧をまとめる -->
 						<div class="max-w-4xl mx-auto">
 							<div class="text-center mb-16">
-								<h2 class="text-4xl mb-4"><?php echo esc_html( $term->name ); ?></h2>
+								<h2 class="text-4xl mb-4 theme-font-heading"><?php echo esc_html( $term->name ); ?></h2>
 								<?php if ( is_string( $desc ) && trim( wp_strip_all_tags( $desc ) ) !== '' ) : ?>
 									<div class="text-lg theme-text-sub"><?php echo wp_kses_post( $desc ); ?></div>
 								<?php endif; ?>
@@ -127,7 +127,7 @@ $has_any = isset( $counts->publish ) && (int) $counts->publish > 0;
 									?>
 									<div class="border-b border-gray-200 pb-6 last:border-b-0">
 										<div class="flex justify-between items-start mb-2">
-											<h3 class="text-2xl"><?php the_title(); ?></h3>
+											<h3 class="text-2xl theme-font-title"><?php the_title(); ?></h3>
 											<?php if ( $price !== '' ) : ?>
 												<span class="text-xl whitespace-nowrap ml-4 flex-shrink-0"><?php echo esc_html( $price ); ?></span>
 											<?php endif; ?>
@@ -141,7 +141,7 @@ $has_any = isset( $counts->publish ) && (int) $counts->publish > 0;
 						</div>
 					<?php else : ?>
 						<div class="text-center mb-12 md:mb-16">
-							<h2 class="text-3xl md:text-4xl mb-4 font-medium"><?php echo esc_html( $term->name ); ?></h2>
+							<h2 class="text-3xl md:text-4xl mb-4 font-medium theme-font-heading"><?php echo esc_html( $term->name ); ?></h2>
 							<?php if ( is_string( $desc ) && trim( wp_strip_all_tags( $desc ) ) !== '' ) : ?>
 								<div class="text-lg theme-text-sub max-w-3xl mx-auto leading-relaxed"><?php echo wp_kses_post( $desc ); ?></div>
 							<?php endif; ?>
@@ -176,7 +176,7 @@ $has_any = isset( $counts->publish ) && (int) $counts->publish > 0;
 									</div>
 									<div class="p-6">
 										<div class="flex justify-between items-start mb-3">
-											<h3 class="text-xl font-medium"><?php the_title(); ?></h3>
+											<h3 class="text-xl font-medium theme-font-title"><?php the_title(); ?></h3>
 											<?php if ( $price !== '' ) : ?>
 												<span class="text-lg whitespace-nowrap ml-4 flex-shrink-0"><?php echo esc_html( $price ); ?></span>
 											<?php endif; ?>

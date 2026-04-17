@@ -4,16 +4,21 @@
  */
 require_once get_theme_file_path( '/inc/restaurant-menu.php' );
 require_once get_theme_file_path( '/inc/theme-colors.php' );
+require_once get_theme_file_path( '/inc/theme-fonts.php' );
 require_once get_theme_file_path( '/inc/liquid-glass.php' );
 
 // ファイルの読み込み
 function add_files() {
     $css_path = get_theme_file_path( '/dist/css/app.css' );
     if ( file_exists( $css_path ) ) {
+        $style_deps = array();
+        if ( wp_style_is( 'theme-google-fonts', 'registered' ) ) {
+            $style_deps[] = 'theme-google-fonts';
+        }
         wp_enqueue_style(
             'theme-tailwind',
             get_theme_file_uri() . '/dist/css/app.css',
-            array(),
+            $style_deps,
             (string) filemtime( $css_path )
         );
     }
