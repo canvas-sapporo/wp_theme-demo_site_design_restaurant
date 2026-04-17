@@ -13,6 +13,9 @@
 <div class="theme-silk-bg" aria-hidden="true">
     <canvas id="theme-silk-canvas"></canvas>
 </div>
+<?php if ( is_singular( 'post' ) ) : ?>
+    <div id="theme-silk-liquid-overlay" class="theme-silk-liquid-overlay" aria-hidden="true"></div>
+<?php endif; ?>
 <div
     class="js-page-loader theme-surface-header fixed inset-0 z-[100] flex flex-col items-center justify-center backdrop-blur-sm transition-opacity duration-300"
     role="status"
@@ -26,7 +29,7 @@
 $nav_items            = theme_get_header_nav_items();
 $header_site_icon_url = theme_get_brand_icon_url();
 ?>
-<div class="min-h-screen flex flex-col relative z-10">
+<div class="min-h-screen flex flex-col relative z-10<?php echo is_singular( 'post' ) ? ' theme-single-layout' : ''; ?>">
     <header class="theme-surface-header fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">

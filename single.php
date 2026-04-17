@@ -33,8 +33,9 @@ if ( is_singular( 'post' ) && have_posts() ) :
 		<?php endif; ?>
 	</div>
 
-	<header class="py-10 md:py-14 px-4 sm:px-6">
-		<div class="max-w-3xl mx-auto text-center">
+	<div class="max-w-3xl mx-auto px-4 sm:px-6 theme-bg-page pb-12 md:pb-20 rounded-b-xl shadow-sm backdrop-blur-lg">
+	<header class="py-10 md:py-14">
+		<div class="text-center">
 			<?php if ( $cat_label !== '' ) : ?>
 				<p class="text-sm text-gray-500 mb-4">
 					<span class="inline-block bg-gray-100 text-gray-900 px-3 py-1"><?php echo esc_html( $cat_label ); ?></span>
@@ -44,7 +45,7 @@ if ( is_singular( 'post' ) && have_posts() ) :
 		</div>
 	</header>
 
-	<div class="max-w-3xl mx-auto px-4 sm:px-6 pb-12 md:pb-20">
+	<div>
 		<p class="theme-text-single-date text-sm">
 			<time datetime="<?php echo esc_attr( get_the_date( DATE_W3C ) ); ?>"><?php echo esc_html( get_the_date( 'Y年n月j日' ) ); ?></time>
 		</p>
@@ -69,6 +70,7 @@ if ( is_singular( 'post' ) && have_posts() ) :
 				</ul>
 			</div>
 		<?php endif; ?>
+	</div>
 	</div>
 </main>
 		<?php

@@ -165,7 +165,11 @@ function theme_build_color_inline_css() {
 		. '.theme-cta-pill{background-color:var(--theme-bg-page);color:var(--theme-text-strong);}'
 		. '.theme-hover-bg-muted:hover{background-color:var(--theme-bg-muted);}'
 		. 'a.theme-link-subtle-hover:hover{color:var(--theme-text-sub);}'
-		. '.theme-opacity-95{opacity:0.95;}';
+		. '.theme-opacity-95{opacity:0.95;}'
+		/* ブログ単体: シルク＋リキッドオーバーレイを背面に見せる（本文は .theme-bg-page で確保）。 */
+		. 'html:has(body.single-post){background-color:transparent;}'
+		. 'body.single-post.antialiased.theme-body-bg{background-color:transparent;}'
+		. 'body.single-post .theme-single-layout{background-color:transparent;}';
 
 	return $css;
 }
