@@ -57,12 +57,12 @@ function initSilkBackground() {
     lightX: -0.015,
     lightY: 0.007,
     lightZ: 0.0,
-    specularStrength: 0.45,
-    specularPower: 2,
-    specularSecondaryStrength: 0.943,
-    specularSecondaryPower: 13,
-    fresnelStrength: 0.25,
-    fresnelPower: 3.0,
+    specularStrength: 0.011,
+    specularPower: 1,
+    specularSecondaryStrength: 0.047,
+    specularSecondaryPower: 1,
+    fresnelStrength: 0.005,
+    fresnelPower: 0.5,
   };
 
   const material = new THREE.ShaderMaterial({
@@ -104,138 +104,143 @@ function initSilkBackground() {
       .normalize();
   };
 
-  gui
+  const waveFolder = gui.addFolder("波形");
+  waveFolder
     .add(material.uniforms.uFrequency.value, "x")
     .min(0)
     .max(20)
     .step(0.001)
-    .name("uFrequencyX");
-  gui
+    .name("周波数 X");
+  waveFolder
     .add(material.uniforms.uFrequency.value, "y")
     .min(0)
     .max(20)
     .step(0.001)
-    .name("uFrequencyY");
-  gui
+    .name("周波数 Y");
+  waveFolder
     .add(params, "amplitude")
     .min(0)
     .max(0.2)
     .step(0.001)
-    .name("amplitude")
+    .name("振幅")
     .onChange((value: number) => {
       material.uniforms.uAmplitude.value = value;
     });
-  gui
+  waveFolder
     .add(params, "detailAmplitude")
     .min(0)
     .max(0.1)
     .step(0.001)
-    .name("detailAmp")
+    .name("細部振幅")
     .onChange((value: number) => {
       material.uniforms.uDetailAmplitude.value = value;
     });
-  gui
+  waveFolder
     .add(params, "ampDecay")
     .min(0)
     .max(1)
     .step(0.001)
-    .name("ampDecay")
+    .name("減衰")
     .onChange((value: number) => {
       material.uniforms.uAmpDecay.value = value;
     });
-  gui
+  waveFolder
     .add(params, "noiseStrength")
     .min(0)
     .max(0.5)
     .step(0.001)
-    .name("noise")
+    .name("ノイズ")
     .onChange((value: number) => {
       material.uniforms.uNoiseStrength.value = value;
     });
-  gui
+  waveFolder
     .add(params, "speed")
     .min(0)
     .max(3)
     .step(0.001)
-    .name("speed")
+    .name("速度")
     .onChange((value: number) => {
       material.uniforms.uSpeed.value = value;
     });
-  gui
+
+  const reflectionFolder = gui.addFolder("光の反射");
+  reflectionFolder
     .add(params, "lightX")
     .min(-2)
     .max(2)
     .step(0.001)
-    .name("lightX")
+    .name("光の方向 X")
     .onChange(updateLightDirection);
-  gui
+  reflectionFolder
     .add(params, "lightY")
     .min(-2)
     .max(2)
     .step(0.001)
-    .name("lightY")
+    .name("光の方向 Y")
     .onChange(updateLightDirection);
-  gui
+  reflectionFolder
     .add(params, "lightZ")
     .min(-2)
     .max(2)
     .step(0.001)
-    .name("lightZ")
+    .name("光の方向 Z")
     .onChange(updateLightDirection);
-  gui
+  reflectionFolder
     .add(params, "specularStrength")
     .min(0)
     .max(2)
     .step(0.001)
-    .name("specular")
+    .name("反射の強さ（主）")
     .onChange((value: number) => {
       material.uniforms.uSpecularStrength.value = value;
     });
-  gui
+  reflectionFolder
     .add(params, "specularPower")
     .min(1)
     .max(200)
     .step(1)
-    .name("specPower")
+    .name("反射の鋭さ（主）")
     .onChange((value: number) => {
       material.uniforms.uSpecularPower.value = value;
     });
-  gui
+  reflectionFolder
     .add(params, "specularSecondaryStrength")
     .min(0)
     .max(2)
     .step(0.001)
-    .name("spec2")
+    .name("反射の強さ（副）")
     .onChange((value: number) => {
       material.uniforms.uSpecularSecondaryStrength.value = value;
     });
-  gui
+  reflectionFolder
     .add(params, "specularSecondaryPower")
     .min(1)
     .max(200)
     .step(1)
-    .name("specPow2")
+    .name("反射の鋭さ（副）")
     .onChange((value: number) => {
       material.uniforms.uSpecularSecondaryPower.value = value;
     });
-  gui
+  reflectionFolder
     .add(params, "fresnelStrength")
     .min(0)
     .max(1)
     .step(0.001)
-    .name("fresnel")
+    .name("縁の光の強さ")
     .onChange((value: number) => {
       material.uniforms.uFresnelStrength.value = value;
     });
-  gui
+  reflectionFolder
     .add(params, "fresnelPower")
     .min(0.5)
     .max(8)
     .step(0.001)
-    .name("fresnelPow")
+    .name("縁の光の広がり")
     .onChange((value: number) => {
       material.uniforms.uFresnelPower.value = value;
     });
+  reflectionFolder.open();
+  waveFolder.open();
 
   const clock = new THREE.Clock();
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
